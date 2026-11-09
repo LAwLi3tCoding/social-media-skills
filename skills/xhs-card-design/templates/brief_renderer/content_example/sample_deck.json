@@ -1,0 +1,77 @@
+{
+  "deck": {
+    "series": "示例合集 · 架构解读",
+    "total": 3,
+    "source": "来源：公开技术博客示例（请替换为你的一手出处）"
+  },
+  "cards": [
+    {
+      "n": 1,
+      "file": "01_cover",
+      "layout": "cover",
+      "title": "示例：双层 Agent 调度",
+      "subtitle": "Router 分派，Worker 执行",
+      "thesis": "单任务上限取决于模型能力，多任务上限取决于人的注意力。",
+      "blocks": [
+        {
+          "type": "list",
+          "title": "三个模块",
+          "items": [
+            ["Router", "常驻分派，统一对外回复"],
+            ["Worker", "上下文隔离，按需并发"],
+            ["Watchdog", "外部控制回路，检查实质进展"]
+          ]
+        },
+        {
+          "type": "note",
+          "text": "此为模板示例数据，不是对任何现有产品的描述。"
+        }
+      ]
+    },
+    {
+      "n": 2,
+      "file": "02_arch",
+      "layout": "page",
+      "title": "整体架构",
+      "thesis": "事件先过滤，再分派；已订阅事件可直通 Worker。",
+      "blocks": [
+        {
+          "type": "flow",
+          "rows": [
+            [{"title": "环境事件", "note": "IM、CI、邮件与日程", "kind": "muted"}],
+            [{"title": "两级过滤", "note": "规则 Fast Path，再交模型 Slow Path", "kind": "plain"}],
+            [{"title": "Router", "note": "只做交互与分派", "kind": "accent"}],
+            [
+              {"title": "Worker", "note": "上下文隔离", "kind": "plain"},
+              {"title": "Worker", "note": "订阅 Thread", "kind": "plain"}
+            ]
+          ],
+          "arrows": ["", "未订阅事件", "分派"]
+        }
+      ]
+    },
+    {
+      "n": 3,
+      "file": "03_exp",
+      "layout": "page",
+      "title": "端到端对照（示例数字）",
+      "thesis": "合成负载下的调度对比，数字仅作版式示例。",
+      "blocks": [
+        {
+          "type": "bars",
+          "title": "完成时间（分钟）",
+          "max": 30,
+          "items": [
+            {"label": "双层调度", "sub": "p50", "value": 12.4, "kind": "accent"},
+            {"label": "双层调度", "sub": "p95", "value": 15.7, "kind": "accent"},
+            {"label": "单 Session", "sub": "p95", "value": 29.5, "kind": "muted"}
+          ]
+        },
+        {
+          "type": "note",
+          "text": "发布前请换成你自己的实测数据与环境说明。"
+        }
+      ]
+    }
+  ]
+}

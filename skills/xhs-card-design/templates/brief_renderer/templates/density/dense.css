@@ -1,0 +1,40 @@
+/* dense: default density overlay (default). Applied after the theme CSS.
+   ~15-20% smaller type and tighter rhythm so each card carries more content.
+   Body stays >= 25px at 1080 width (readable on a phone). Use --density normal for the original sizes. */
+:root{ --title:84px; --sub:36px; --thesis:30px; --body:25px; --small:20px; --gap:34px; --mx:76px; }
+.card{padding-top:56px}
+.head{margin-top:48px}
+.subtitle{font-size:var(--sub);margin-top:14px}
+.thesis{font-size:var(--thesis);margin-top:22px;line-height:1.5}
+.blocks{margin-top:40px}
+.run .pg{font-size:24px}
+.layout-cover .head{margin-top:72px}
+.layout-cover .title{font-size:108px}
+.layout-cover .subtitle{font-size:40px}
+.layout-cover .thesis{font-size:34px;margin-top:44px;padding-top:24px}
+.layout-cover .blocks{margin-top:44px;gap:32px}
+.b-title{font-size:22px;margin-bottom:10px}
+.b-text{line-height:1.6}
+.b-list li{padding:12px 0;line-height:1.48}
+.b-list{grid-template-columns:140px minmax(0,1fr);column-gap:24px}
+.b-list .b-title{padding-top:13px}
+.b-list li{grid-template-columns:180px 1fr;column-gap:18px}
+.b-note{padding-left:164px}
+.g-row{gap:14px}
+.g-cell{padding:18px 20px 20px}
+.g-name{font-size:24px}
+.g-desc{margin-top:6px}
+.bars{gap:20px}
+.bar-row{grid-template-columns:290px 1fr 88px}
+.bar-label{font-size:23px}
+.bar-track{height:28px}
+.bar-val{font-size:32px}
+.b-table table{font-size:23px;line-height:1.42}
+.b-table th{padding:0 12px 10px}
+.b-table td{padding:12px 12px}
+.b-code pre{font-size:21px;padding:20px 24px}
+.stat-v{font-size:60px}
+.node{padding:16px 20px}
+.node-t{font-size:24px}
+.f-arrow{height:48px}
+.f-arrow span,.bp-label{font-size:20px}

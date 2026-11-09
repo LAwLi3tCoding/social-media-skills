@@ -1,0 +1,35 @@
+/* notes: dark engineering notes. Deep navy ground derived from DeepSeek blue, quiet panels, mono only for data. */
+:root{
+  --bg:#0e1322; --surface:#171e33; --ink:#e8ebf3; --ink-2:#b3bacb; --ink-3:#7e879d; --line:#263049;
+  --accent:#8299ff; --accent-ink:#0e1322; --accent-soft:#1c2547; --warn:#f2a65e; --warn-soft:#241e1f;
+  --sans:"Geist","Noto Sans CJK SC",sans-serif; --display:var(--sans);
+  --title:92px; --thesis:33px; --body:29px; --small:24px; --gap:46px; --radius:12px;
+}
+body{letter-spacing:.005em}
+.run{color:var(--ink-3)}
+.run .pg{font-family:var(--mono);font-size:24px;color:var(--ink-2)}
+.title{font-weight:700;letter-spacing:-0.025em}
+.layout-cover .head{margin-top:110px}
+.layout-cover .title{font-size:112px;line-height:1.04}
+.layout-cover .subtitle{color:var(--accent);font-weight:500}
+.layout-cover .thesis{font-size:36px;color:var(--ink)}
+.thesis{line-height:1.55}
+.b-text,.b-list li{line-height:1.66}
+.b-title{color:var(--ink-3);font-weight:500}
+.b-list ul{background:var(--surface);border-radius:var(--radius);padding:10px 30px}
+.b-list li{padding:15px 0;grid-template-columns:220px 1fr}
+.b-list li+li{border-top:1px solid var(--line)}
+.b-list .desc{color:var(--ink-2)}
+.b-note{color:var(--ink-3)}
+.node{background:var(--surface);box-shadow:inset 0 0 0 1.5px var(--line)}
+.node.k-accent{background:var(--accent-soft);color:var(--ink);box-shadow:inset 0 0 0 2px var(--accent)}
+.node.k-accent .node-t{color:var(--accent)}
+.node.k-accent .node-n{color:var(--ink-2);opacity:1}
+.node.k-muted{background:transparent;box-shadow:inset 0 0 0 1.5px var(--line)}
+.f-arrow i{background:var(--ink-3)}
+.f-side{background:var(--warn-soft);box-shadow:inset 0 0 0 1.5px #4a3626}
+.g-cell{background:var(--surface)}
+.bar-val,.bar-sub{font-family:var(--mono)}
+.bar-val{font-size:32px;font-weight:600}
+.k-muted .bar-fill{background:#59627a;opacity:1}
+.src{color:var(--ink-3)}

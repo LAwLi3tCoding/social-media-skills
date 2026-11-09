@@ -1,0 +1,32 @@
+/* doc: modern product-doc. White, one soft single-hue wash, Geist, floating white panels with one soft shadow. */
+:root{
+  --bg:#fbfbfd; --surface:#f3f4f8; --ink:#121521; --ink-2:#4b5163; --ink-3:#868b9b; --line:#e7e9f0;
+  --accent:#4d6bfe; --accent-soft:#eef1ff; --warn:#b5590f; --warn-soft:#fdf4ea;
+  --sans:"Geist","Noto Sans CJK SC",sans-serif; --display:var(--sans);
+  --title:90px; --thesis:33px; --body:29px; --small:24px; --gap:32px; --radius:16px;
+  --panel-shadow:0 1px 2px rgba(18,24,60,.05),0 12px 32px -8px rgba(18,24,60,.10);
+}
+.bg{background:radial-gradient(900px 620px at 92% -6%,rgba(77,107,254,.22),rgba(77,107,254,0) 70%),
+  radial-gradient(700px 500px at -10% 108%,rgba(77,107,254,.07),rgba(77,107,254,0) 70%)}
+.run .series{display:flex;align-items:center;gap:14px;color:var(--ink-2)}
+.run .series::before{content:"";width:22px;height:22px;border-radius:6px;background:var(--accent)}
+.title{font-weight:600;letter-spacing:-0.03em}
+.layout-cover .head{margin-top:190px}
+.layout-cover .title{font-size:108px;line-height:1.04}
+.layout-cover .subtitle{color:var(--ink-2)}
+.thesis{color:var(--ink-2)}
+.b-title{color:var(--ink-2);font-weight:600;margin-bottom:14px}
+.b-list ul,.b-flow,.b-bars .bars{background:#fff;border-radius:20px;box-shadow:var(--panel-shadow)}
+.b-list ul{padding:8px 32px}
+.b-list li{padding:16px 0;grid-template-columns:220px 1fr}
+.b-list li+li{border-top:1px solid var(--line)}
+.b-flow{padding:30px 28px}
+.b-bars .bars{padding:32px 32px}
+.node{background:var(--surface)}
+.node.k-muted{background:#fff;box-shadow:inset 0 0 0 1.5px var(--line)}
+.g-cell{background:#fff;box-shadow:var(--panel-shadow)}
+.f-side{background:var(--warn-soft)}
+.b-note{color:var(--ink-3)}
+.bar-track{background:var(--surface);border-radius:8px;height:36px}
+.bar-fill{border-radius:8px}
+.k-muted .bar-fill{background:#b9bfcc;opacity:1}

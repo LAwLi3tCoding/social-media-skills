@@ -1,0 +1,52 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="fonts.css"><style>
+body{font-family:Pixel;color:#1B1F3B;-webkit-font-smoothing:none}
+.page{background:#FEF6E4;background-image:linear-gradient(#0000000a 2px,transparent 2px),linear-gradient(90deg,#0000000a 2px,transparent 2px);background-size:36px 36px;padding:40px 48px 30px;display:flex;flex-direction:column;justify-content:space-between}
+.px{box-shadow:0 -6px 0 0 #1B1F3B,0 6px 0 0 #1B1F3B,-6px 0 0 0 #1B1F3B,6px 0 0 0 #1B1F3B,6px 12px 0 0 #1B1F3B33,12px 6px 0 0 #1B1F3B33}
+.top{display:flex;justify-content:space-between;align-items:center;font-size:36px}
+.badge{background:#FFD23F;padding:8px 20px}
+.pn{background:#1B1F3B;color:#7CF29C;padding:8px 20px}
+.screen{background:#1B1F3B;color:#fff;padding:24px 36px 0;position:relative;height:384px;overflow:hidden}
+.screen h1{font-weight:400;font-size:96px;line-height:1.2;color:#FFD23F;text-shadow:6px 6px 0 #E4572E}
+.screen h1 span{color:#7CF29C;text-shadow:6px 6px 0 #2E5EAA}
+.screen .lv{font-size:36px;color:#9FB4FF;margin-top:14px}
+.screen .robot{position:absolute;right:300px;bottom:22px;height:240px;image-rendering:pixelated}
+.screen .pc{position:absolute;right:20px;bottom:22px;height:190px}
+.ground{position:absolute;left:0;right:0;bottom:0;height:24px;background:repeating-linear-gradient(90deg,#3E8E41 0 24px,#2F6F33 24px 48px)}
+.star{position:absolute;width:6px;height:6px;background:#fff}
+.dlg{background:#fff;padding:18px 30px 22px;font-size:36px;line-height:1.5}
+.dlg .who{display:inline-block;background:#2E5EAA;color:#fff;padding:0 14px;margin-bottom:8px}
+.flow{display:flex;align-items:center;gap:12px;margin-top:14px}
+.flow b{font-weight:400;flex:1;text-align:center;padding:6px 0;color:#1B1F3B}
+.flow i{font-style:normal}
+.vs{display:flex;gap:84px;position:relative}
+.p{flex:1;padding:20px 24px 24px;font-size:36px;line-height:1.5}
+.p .h{font-size:48px;margin-bottom:10px}
+.p .bar{height:18px;background:repeating-linear-gradient(90deg,currentColor 0 18px,transparent 18px 24px);margin-bottom:14px;opacity:.85}
+.vsb{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-size:48px;color:#E4572E;text-shadow:4px 4px 0 #1B1F3B}
+.pair{display:flex;gap:30px}
+.it{flex:1;padding:20px 24px;font-size:36px;line-height:1.5;display:flex;gap:16px;align-items:flex-start}
+.it .ic{position:relative;flex:none;margin-top:6px}.it .ic:after{content:"";position:absolute;left:-4px;right:-4px;top:50%;height:6px;background:#1B1F3B;transform:rotate(-40deg)}.it img{width:48px;display:block;image-rendering:pixelated;flex:none;margin-top:6px}
+.note{font-size:24px;line-height:1.5;color:#55597a;background:#FFF;padding:12px 18px}
+.foot{display:flex;justify-content:space-between;font-size:24px;color:#55597a}
+</style></head><body><div class="page">
+<div class="top"><span class="badge px">示例合集 · 01</span><span class="pn px">STAGE 02</span></div>
+<div class="screen px">
+ <h1>AI 是程序<br><span>不是生命</span></h1>
+ <div class="lv">▶ PRESS START</div>
+ <img class="robot" src="assets/px_robot.png"><img class="pc" src="assets/px_pc.png">
+ <div class="star" style="left:560px;top:40px"></div><div class="star" style="left:700px;top:90px"></div><div class="star" style="left:900px;top:30px"></div><div class="star" style="left:620px;top:150px;background:#FFD23F"></div><div class="star" style="left:820px;top:170px"></div><div class="star" style="left:960px;top:120px;background:#7CF29C"></div>
+ <div class="ground"></div>
+</div>
+<div class="dlg px"><span class="who">提示</span><br>AI 本质上是电脑里运行的程序。你给它输入，它经过计算，给你一个结果。
+ <div class="flow"><b class="px" style="background:#FFD23F">输入</b><i>▶▶</i><b class="px" style="background:#9FB4FF">计算</b><i>▶▶</i><b class="px" style="background:#7CF29C">结果</b></div></div>
+<div class="vs">
+ <div class="p px" style="background:#FFF;color:#E4572E"><div class="h">1P 普通程序</div><div class="bar"></div><div style="color:#1B1F3B">怎么做事，全靠人提前把规则一条条写好。</div></div>
+ <div class="p px" style="background:#FFF;color:#2E5EAA"><div class="h">2P 现在大多数 AI</div><div class="bar"></div><div style="color:#1B1F3B">人给它大量数据，它自己从里面找出规律。</div></div>
+ <div class="vsb">VS</div></div>
+<div class="pair">
+ <div class="it px" style="background:#FFE0E0"><span class="ic"><img src="assets/px_heart.png"></span><div>它没有意识，<br>也没有感受。</div></div>
+ <div class="it px" style="background:#E3FFE9"><img src="assets/px_star.png"><div>它能写出带情绪的话，但它自己没有情绪。</div></div>
+</div>
+<div class="note px">※ 早期也有不少 AI 是靠人写规则做出来的，所以 AI 不全是机器学习。</div>
+<div class="foot"><span>来源：IBM · John McCarthy · Google</span><span>■ □ ■</span></div>
+</div></body></html>

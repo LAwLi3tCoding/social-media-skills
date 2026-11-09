@@ -1,0 +1,19 @@
+/* big: few words, large type (for cover/keyword cards) */
+:root{--body:44px;--small:28px;--thesis:46px;--sub:50px}
+.title{font-size:128px}
+.layout-cover .title{font-size:136px}
+.subtitle{font-size:50px;margin-top:24px}
+.thesis,.layout-cover .thesis{font-size:50px;line-height:1.5;color:var(--ink)}
+.stat-v{font-size:120px;color:var(--accent)}
+.stat-l{font-size:32px}
+.stats{gap:80px}
+.b-title{font-size:30px}
+.b-list{grid-template-columns:150px minmax(0,1fr)}
+.b-list .b-title{padding-top:30px}
+.b-list li{grid-template-columns:260px 1fr;padding:28px 0;font-size:44px;line-height:1.35}
+.b-list .term{color:var(--ink)}
+.node{padding:28px 32px}
+.node-t{font-size:44px}
+.node-n{font-size:34px;margin-top:10px}
+.f-arrow{height:64px}
+.src{font-size:24px}

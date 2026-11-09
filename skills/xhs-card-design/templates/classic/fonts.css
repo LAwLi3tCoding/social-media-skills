@@ -1,0 +1,8 @@
+/* 字体路径占位：安装后运行 scripts/relocate.sh，把 __FONTS_DIR__ 换成本机字体目录。 */
+@font-face{font-family:Smiley;src:url(__FONTS_DIR__/smiley/SmileySans-Oblique.ttf)}
+@font-face{font-family:QingKe;src:url(__FONTS_DIR__/qingke.ttf)}
+@font-face{font-family:MaShan;src:url(__FONTS_DIR__/mashan.ttf)}
+@font-face{font-family:XiaoWei;src:url(__FONTS_DIR__/xiaowei.ttf)}
+@font-face{font-family:KuaiLe;src:url(__FONTS_DIR__/kuaile.ttf)}
+@font-face{font-family:WenKai;src:url(__FONTS_DIR__/wenkai.ttf)}
+@font-face{font-family:Pixel;src:url(__FONTS_DIR__/pixel/fusion-pixel-12px-proportional-zh_hans.ttf)}

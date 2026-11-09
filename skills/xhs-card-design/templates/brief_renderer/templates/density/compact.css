@@ -1,0 +1,55 @@
+/* compact: info-heavy overlay (info-heavy). ~70% of dense type, tighter rhythm, about twice the content per card.
+   Body 18px at 1080 width. Section titles move above lists (no side-head column) to free width. */
+:root{ --title:62px; --sub:26px; --thesis:22px; --body:18px; --small:15px; --gap:22px; --mx:64px; }
+.card{padding-top:44px}
+.run{padding-bottom:14px;font-size:16px}
+.run .pg{font-size:18px}
+.head{margin-top:30px}
+.title{line-height:1.1}
+.subtitle{font-size:var(--sub);margin-top:10px}
+.thesis{font-size:var(--thesis);margin-top:14px;line-height:1.55}
+.blocks{margin-top:24px}
+.layout-cover .head{margin-top:40px}
+.layout-cover .title{font-size:78px}
+.layout-cover .subtitle{font-size:28px}
+.layout-cover .thesis{font-size:22px;margin-top:22px;padding-top:16px}
+.layout-cover .blocks{margin-top:26px;gap:22px}
+.b-title{font-size:16px;margin-bottom:6px;letter-spacing:.02em}
+.b-text{line-height:1.6}
+.b-note{font-size:14px;line-height:1.55;padding-left:0}
+.b-list{display:block}
+.b-list .b-title{padding-top:0;margin-bottom:4px}
+.b-list li{padding:7px 0;line-height:1.5;grid-template-columns:128px 1fr;column-gap:14px}
+.c-col .b-list li{grid-template-columns:96px 1fr}
+.g-row{gap:10px}
+.g-cell{padding:12px 14px 13px}
+.g-name{font-size:18px}
+.g-desc{font-size:15px;margin-top:4px;line-height:1.5}
+.bars{gap:14px}
+.bar-row{grid-template-columns:220px 1fr 70px}
+.bar-label{font-size:17px}
+.bar-track{height:20px}
+.bar-val{font-size:24px}
+.b-table table{font-size:16px;line-height:1.45}
+.b-table th{font-size:14px;padding:0 10px 6px}
+.b-table td{padding:7px 10px}
+.b-code pre{font-size:15px;padding:14px 18px;line-height:1.55}
+.stats{gap:0;justify-content:space-between}
+.stat-v{font-size:42px;font-family:var(--display)}
+.stat-l{font-size:14px;margin-top:6px}
+.node{padding:10px 14px}
+.node-t{font-size:17px}
+.node-n{font-size:14px}
+.f-arrow{height:30px}
+.f-arrow span,.bp-label{font-size:14px}
+.src{padding:16px 0 30px;font-size:14px}
+.b-quote blockquote{padding:2px 0 2px 16px;border-left-width:3px}
+.q-who{font-size:14px}
+.q-zh{font-size:15px;margin-top:4px}
+.c-row{column-gap:28px}
+.c-col .b-list li{grid-template-columns:118px 1fr}
+.bars{gap:9px}
+.bar-track{height:16px}
+.bar-label{font-size:16px}
+.bar-val{font-size:20px}
+.b-bars .b-title{margin-bottom:10px}

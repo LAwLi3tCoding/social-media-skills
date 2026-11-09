@@ -1,0 +1,45 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="fonts.css"><style>
+body{font-family:"Noto Serif CJK SC";color:#1d1a16}
+.page{background:#EDE5D3;padding:44px 54px 30px;display:flex;flex-direction:column;justify-content:space-between}
+.grain{position:absolute;inset:0;opacity:.35;mix-blend-mode:multiply;pointer-events:none}
+.mast{text-align:center;border-bottom:6px double #1d1a16;padding-bottom:10px}
+.mast .row{display:flex;justify-content:space-between;font-size:24px;font-family:"Noto Sans CJK SC";letter-spacing:2px;border-bottom:2px solid #1d1a16;padding-bottom:10px}
+.mast h2{font-weight:700;font-size:84px;letter-spacing:10px;line-height:1.25;margin-top:6px}
+.mast .row2{display:flex;justify-content:space-between;font-size:24px;font-family:"Noto Sans CJK SC";border-top:2px solid #1d1a16;padding-top:8px;margin-top:6px}
+.red{color:#B3261E}
+h1{font-weight:700;font-size:96px;line-height:1.15;letter-spacing:2px;text-align:left}
+h1 .red{font-size:96px}
+.kick{display:inline-block;background:#B3261E;color:#EDE5D3;font-family:"Noto Sans CJK SC";font-weight:700;font-size:26px;padding:4px 14px;letter-spacing:4px;margin-bottom:10px}
+.body{display:grid;grid-template-columns:520px 1fr;gap:34px;border-top:2px solid #1d1a16;padding-top:22px}
+.body img{width:100%;height:290px;object-fit:cover;mix-blend-mode:multiply;filter:contrast(1.15) grayscale(1);border:2px solid #1d1a16}
+.cap{font-family:"Noto Sans CJK SC";font-size:22px;color:#5b5348;margin-top:6px}
+.txt{font-size:34px;line-height:1.6;text-align:justify}
+.txt b{color:#B3261E}
+.cmp{display:grid;grid-template-columns:1fr 2px 1fr;gap:0 30px;border-top:5px solid #1d1a16;border-bottom:2px solid #1d1a16;padding:20px 0}
+.cmp .rule{background:#1d1a16}
+.cmp h3{font-size:44px;font-weight:700;margin-bottom:8px}
+.cmp p{font-size:34px;line-height:1.55}
+.quote{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:stretch}
+.q1{background:#1d1a16;color:#EDE5D3;padding:26px 30px;font-size:46px;font-weight:700;line-height:1.35}
+.q2{border-left:8px solid #B3261E;padding:4px 0 4px 20px;font-size:32px;line-height:1.45;font-weight:700;margin-top:16px}
+.note{font-family:"Noto Sans CJK SC";font-size:26px;line-height:1.55;border:2px solid #1d1a16;padding:12px 18px;background:#F5EFE2}
+.foot{display:flex;justify-content:space-between;font-family:"Noto Sans CJK SC";font-size:22px;color:#5b5348;border-top:2px solid #1d1a16;padding-top:10px}
+.hd{display:flex;justify-content:space-between;align-items:stretch;gap:30px}
+.fl{width:300px;border:2px solid #1d1a16;padding:10px 18px 14px;font-family:"Noto Sans CJK SC";text-align:center;background:#F5EFE2}
+.fh{font-size:22px;letter-spacing:6px;border-bottom:2px solid #1d1a16;padding-bottom:6px;margin-bottom:8px}
+.st{font-family:"Noto Serif CJK SC";font-weight:700;font-size:34px;border:2px solid #1d1a16;padding:2px 0}
+.red2{background:#B3261E;color:#EDE5D3;border-color:#B3261E}
+.ar{font-size:24px;line-height:1.2}
+</style></head><body><div class="page">
+<svg class="grain" width="1080" height="1440"><filter id="g"><feTurbulence type="fractalNoise" baseFrequency=".8" numOctaves="3"/><feColorMatrix values="0 0 0 0 .45  0 0 0 0 .38  0 0 0 0 .28  0 0 0 .6 0"/></filter><rect width="100%" height="100%" filter="url(#g)"/></svg>
+<div class="mast"><div class="row"><span>每天一个小知识</span><span>第 01 期 · 第 02 版</span></div>
+ <h2>示例合集</h2>
+ <div class="row2"><span>AI 是什么</span><span class="red">示例合集 · 01</span></div></div>
+<div class="hd"><div><span class="kick">本版要闻</span><h1>AI 是程序，<br><span class="red">不是生命</span></h1></div><div class="fl"><div class="fh">工作方式</div><div class="st">输入</div><div class="ar">↓</div><div class="st">计算</div><div class="ar">↓</div><div class="st red2">结果</div></div></div>
+<div class="body"><div><img src="assets/news.jpg"><div class="cap">示意插图：一台老式电脑</div></div>
+ <div><div class="txt"><b>【本报讯】</b>AI 本质上是电脑里运行的程序。你给它输入，它经过计算，给你一个结果。</div><div class="q2">它能写出带情绪的话，但它自己没有情绪。</div></div></div>
+<div class="cmp"><div><h3>普通程序</h3><p>怎么做事，全靠人提前把规则一条条写好。</p></div><div class="rule"></div>
+ <div><h3 class="red">现在大多数 AI</h3><p>人给它大量数据，它自己从里面找出规律。</p></div></div>
+<div class="quote"><div class="q1">它没有意识，<br>也没有感受。</div><div class="note"><b>附注</b><br>早期也有不少 AI 是靠人写规则做出来的，所以 AI 不全是机器学习。</div></div>
+<div class="foot"><span>来源：IBM · John McCarthy · Google</span><span>— 02 —</span></div>
+</div></body></html>

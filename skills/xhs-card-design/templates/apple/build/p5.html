@@ -1,0 +1,42 @@
+<!doctype html><html><head><meta charset=utf-8><style>*{box-sizing:border-box;margin:0;padding:0}html,body{width:1080px;height:1440px;overflow:hidden}
+:root{--ink:#1d1d1f;--gray:#6e6e73;--line:#d2d2d7;--band:#f5f5f7;--blue:#0071e3;--grad:linear-gradient(95deg,#0a84ff 0%,#5e5ce6 38%,#bf5af2 68%,#ff375f 100%)}
+#p{width:1080px;height:1440px;background:#fff;color:var(--ink);font-family:Inter,"Noto Sans CJK SC",sans-serif;display:flex;flex-direction:column;padding:40px 0 30px;-webkit-font-smoothing:antialiased}
+.top{display:flex;justify-content:space-between;align-items:center;padding:0 60px;font-size:22px}
+.tag{font-weight:700;letter-spacing:-.01em}.pn{color:var(--gray);font-variant-numeric:tabular-nums}
+.main{flex:1;min-height:0;display:flex;flex-direction:column;justify-content:space-between;gap:20px;padding:24px 0 18px}
+.hd{text-align:center;padding:0 60px}
+.eb{font-size:28px;font-weight:700;background:var(--grad);-webkit-background-clip:text;color:transparent;display:inline-block}
+h1{font-size:86px;line-height:1.08;font-weight:900;letter-spacing:-.045em;margin-top:10px}
+.cover h1{font-size:104px}
+.g{background:var(--grad);-webkit-background-clip:text;color:transparent;padding:0 4px}
+.sub{font-size:28px;line-height:1.5;color:var(--gray);font-weight:500;margin-top:14px;letter-spacing:-.01em}
+.stage{background:var(--band);padding:30px 34px 16px;text-align:center}
+.shot{background:#fff;border-radius:28px;box-shadow:0 1px 2px rgba(0,0,0,.04),0 24px 48px -28px rgba(0,0,0,.16);padding:12px;margin:0 auto}
+.shot img{width:100%;display:block}
+.cap{font-size:22px;color:var(--gray);margin-top:16px;font-weight:500}
+.line{text-align:center;font-size:26px;color:var(--gray);font-weight:500}
+.specs{display:grid;margin:0 60px;border-top:1px solid var(--line)}
+.specs div{text-align:center;padding:16px 8px;border-bottom:1px solid var(--line);position:relative}
+.specs div+div:before{content:"";position:absolute;left:0;top:22%;height:56%;border-left:1px solid var(--line)}
+.specs b{display:block;font-size:28px;font-weight:700;letter-spacing:-.02em}.specs span{font-size:21px;color:var(--gray)}
+.specs.big{border-top:0}.specs.big div{border-bottom:0}.specs.big b{font-size:52px;font-weight:800;letter-spacing:-.04em;line-height:1.1}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:44px;padding:0 60px}
+.cols h4,.rows h4{font-size:30px;font-weight:800;letter-spacing:-.02em;margin-bottom:8px}
+.cols p,.rows p{font-size:26px;line-height:1.6;color:var(--gray)}
+.rows{list-style:none;padding:0 60px;display:flex;flex-direction:column}
+.rows li{display:flex;gap:30px;padding:22px 0;border-top:1px solid var(--line)}.rows li:last-child{border-bottom:1px solid var(--line)}
+.no{font-size:60px;font-weight:800;letter-spacing:-.04em;line-height:1;width:90px;flex:none;background:var(--grad);-webkit-background-clip:text;color:transparent}
+.rows h4{font-size:36px}.rows p{font-size:29px}
+code{font-family:"JetBrains Mono",monospace;font-size:.88em;color:var(--ink);background:var(--band);padding:1px 8px;border-radius:8px}
+pre{font-family:"JetBrains Mono",monospace;white-space:pre-wrap;background:var(--ink);color:#f5f5f7;font-size:28px;padding:20px 26px;border-radius:20px;margin-top:14px}
+pre.lt{background:var(--band);color:var(--ink);font-size:23px;line-height:1.55}
+.warn{margin:0 60px;background:var(--band);border-radius:24px;padding:22px 30px;font-size:27px;line-height:1.55;color:var(--gray)}.warn b{color:#bf4800}
+.pair{display:grid;grid-template-columns:1.2fr 1fr;gap:24px;padding:0 60px}.pair>div{background:var(--band);border-radius:28px;padding:30px 34px}
+.pair p{font-size:32px;line-height:1.65;font-weight:600}.pair .muted p{color:var(--gray)}
+.eb2{font-size:24px;font-weight:700;color:var(--blue);margin-bottom:8px}.pair .muted .eb2{color:var(--gray)}
+.foot{display:flex;justify-content:space-between;padding:16px 60px 0;font-size:20px;color:#86868b;border-top:1px solid #e8e8ed;margin:0 60px;padding-left:0;padding-right:0}
+.link{color:#0066cc}
+</style></head><body><div id=p>
+<div class=top><span class=tag>示例合集 · 02</span><span class=pn>05 / 07</span></div>
+<div class=main><header class="hd "><div class=eb>示例 3</div><h1>AI Agent 开发栈</h1></header><div class=cols><div><h4>上半部分 · 开发时</h4><p>Claude Code、Codex 两个 coding agent，通过 MCP 连 GitHub 和 PostgreSQL。</p></div><div><h4>下半部分 · 上线后</h4><p>LangGraph Agent 应用，调 Claude / OpenAI API，Qdrant 检索，Langfuse 追踪。</p></div></div><section class=stage><div class=shot style="width:72%"><img src="../assets/agent.png"></div><div class=cap>FIG.3　开发时与上线后画在同一张图里</div></section><p class=warn><b>Logo 不全</b>　LangGraph 用的是 LangChain 的标；Codex 和 OpenAI API 是同一个 Logo。</p></div>
+<div class=foot><span>图：stack-diagram 自带脚本 + 模板生成</span><span class=link>github.com/caru-ini/stack-diagram</span></div></div></body></html>

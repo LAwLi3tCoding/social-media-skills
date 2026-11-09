@@ -1,0 +1,66 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="fonts.css"><style>
+body{background:#6b4426}
+.page{background:#4a2c17;padding:26px}
+.board{position:absolute;inset:26px 26px 70px;background:url(assets/chalk.jpg) center/cover;box-shadow:inset 0 0 60px #000a, 0 0 0 6px #2e1a0c;padding:46px 56px 30px;color:#f4f1e8;font-family:WenKai;display:flex;flex-direction:column;justify-content:space-between}
+.wood{position:absolute;inset:0;background:repeating-linear-gradient(90deg,#7a4b28 0 7px,#6a3f20 7px 13px,#83532e 13px 22px);}
+.tray{position:absolute;left:10px;right:10px;bottom:10px;height:52px;background:linear-gradient(#9a6236,#5d3619);border-radius:6px;box-shadow:0 -4px 10px #0007}
+.stick{position:absolute;bottom:30px;height:16px;border-radius:4px}
+.ch{filter:url(#chalk)}
+.top{display:flex;justify-content:space-between;align-items:center;font-size:30px}
+.badge{border:2.5px solid #f4f1e8;border-radius:40px;padding:6px 22px;color:#FFE566;border-color:#FFE566}
+.pn{font-family:KuaiLe;font-size:44px;color:#66B3FF}
+h1{font-family:KuaiLe;font-weight:400;font-size:104px;line-height:1.15;letter-spacing:2px}
+h1 .y{color:#FFE566}
+h1 .p{color:#FF9999}
+.sub{font-size:40px;line-height:1.55;margin-top:6px}
+.flow{display:flex;align-items:center;justify-content:space-between;margin-top:6px}
+.bx{border:3px solid #f4f1e8;border-radius:14px 20px 12px 18px;font-size:38px;padding:10px 34px;font-family:KuaiLe}
+.ar{font-size:50px;color:#FFE566}
+.table{display:grid;grid-template-columns:1fr 1fr;border:3px solid #f4f1e8;border-radius:10px}
+.table div{padding:22px 26px;font-size:38px;line-height:1.5}
+.table .h{font-family:KuaiLe;font-size:44px;border-bottom:3px solid #f4f1e8}
+.table .l{border-right:3px dashed #f4f1e8}
+.c1{color:#90EE90}.c2{color:#FFB366}
+.two{display:flex;gap:30px;align-items:center}
+.circ{position:relative;font-family:KuaiLe;font-size:50px;line-height:1.3;color:#FF9999;padding:34px 54px;flex:none}
+.circ svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.rt{font-size:40px;line-height:1.55}
+.rt u{text-decoration:none;border-bottom:3px solid #66B3FF}
+.note{font-size:32px;line-height:1.5;color:#d9d6cc;border-left:6px solid #66B3FF;padding-left:20px}
+.foot{display:flex;justify-content:space-between;font-size:24px;color:#bdb9ad}
+.doodle{position:absolute}
+</style></head><body><div class="page"><div class="wood"></div>
+<svg width="0" height="0" style="position:absolute"><filter id="chalk" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency="1.1" numOctaves="2" result="n"/><feColorMatrix in="n" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -0.9 1.3" result="m"/><feComposite in="SourceGraphic" in2="m" operator="in" result="t"/><feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="2" result="w"/><feDisplacementMap in="t" in2="w" scale="3"/></filter></svg>
+<div class="board"><div class="ch" style="display:contents"></div>
+ <div class="top ch"><span class="badge">示例合集 · 01</span><span class="pn">P.02</span></div>
+ <div class="ch" style="position:relative">
+  <h1><span class="y">AI 是程序</span><br><span class="p">不是生命</span></h1>
+  <svg class="doodle" style="left:0;top:118px" width="520" height="30"><path d="M5 18 Q60 4 120 16 T240 15 T360 16 T500 12" stroke="#FFE566" stroke-width="6" fill="none" stroke-linecap="round"/></svg>
+  <svg class="doodle" style="right:10px;top:0" width="300" height="240" viewBox="0 0 300 240" fill="none" stroke="#f4f1e8" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+   <rect x="40" y="20" width="220" height="150" rx="14"/><rect x="62" y="40" width="176" height="108" rx="6" stroke="#66B3FF"/>
+   <path d="M120 170 L110 205 M180 170 L190 205 M85 208 H215"/>
+   <path d="M95 95 h30 M175 95 h30" stroke="#FFE566"/><path d="M130 122 q20 12 40 0" stroke="#FFE566"/>
+   <path d="M20 40 l-14 -10 M18 80 h-16 M280 40 l14 -10 M282 80 h16" stroke="#FF9999"/>
+  </svg>
+ </div>
+ <div class="ch">
+  <div class="sub">AI 本质上是电脑里运行的程序。<br>你给它输入，它经过计算，给你一个结果。</div>
+  <div class="flow" style="margin-top:18px"><span class="bx">输入</span><span class="ar">⟶</span><span class="bx" style="color:#66B3FF;border-color:#66B3FF">计算</span><span class="ar">⟶</span><span class="bx" style="color:#90EE90;border-color:#90EE90">结果</span></div>
+ </div>
+ <div class="table ch">
+  <div class="h l c1">普通程序</div><div class="h c2">现在大多数 AI</div>
+  <div class="l">怎么做事，全靠人提前把规则一条条写好。</div><div>人给它大量数据，它自己从里面找出规律。</div>
+ </div>
+ <div class="two ch">
+  <div class="circ">它没有意识，<br>也没有感受。<svg viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M50 3 C85 2 99 25 98 52 C97 82 70 98 45 97 C15 96 2 75 3 48 C4 22 22 5 58 6" stroke="#FF9999" stroke-width="1.2" fill="none" vector-effect="non-scaling-stroke" style="stroke-width:4px"/></svg></div>
+  <div class="rt"><svg width="70" height="60" viewBox="0 0 70 60" fill="none" stroke="#FFE566" stroke-width="4" stroke-linecap="round" style="display:block;margin-bottom:6px"><path d="M4 30 Q30 10 60 30 M48 18 L60 30 L46 40"/></svg>它能写出带情绪的话，<br><u>但它自己没有情绪。</u></div>
+ </div>
+ <div class="note ch">早期也有不少 AI 是靠人写规则做出来的，所以 AI 不全是机器学习。</div>
+ <div class="foot ch"><span>来源：IBM · John McCarthy · Google</span><span style="color:#FFE566;font-size:30px">☆ ☆ ☆</span></div>
+</div>
+<div class="tray"></div>
+<div class="stick" style="left:120px;width:110px;background:#f4f1e8"></div>
+<div class="stick" style="left:260px;width:80px;background:#FFE566;transform:rotate(-4deg)"></div>
+<div class="stick" style="left:820px;width:100px;background:#FF9999;transform:rotate(3deg)"></div>
+<div class="stick" style="left:650px;width:130px;height:30px;bottom:22px;background:#3a3a3a;border-top:10px solid #c8a46e;border-radius:4px"></div>
+</div></body></html>

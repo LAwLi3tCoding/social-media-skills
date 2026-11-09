@@ -1,0 +1,28 @@
+# deps / caches
+node_modules/
+__pycache__/
+*.pyc
+.DS_Store
+.venv/
+venv/
+
+# local fonts (download yourself)
+**/fonts/**/*.ttf
+**/fonts/**/*.otf
+**/fonts/**/*.woff*
+
+# render outputs
+**/cards/
+**/cards_src/
+**/out/
+**/post*_pixel/
+*.rendered.png
+
+# editor / OS
+*.swp
+.idea/
+.vscode/
+
+# audit / local-only
+AUDIT.md
+**/superagent_sample.json

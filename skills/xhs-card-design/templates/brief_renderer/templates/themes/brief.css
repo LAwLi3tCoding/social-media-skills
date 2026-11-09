@@ -1,0 +1,34 @@
+/* brief: restrained editorial research brief. Swiss grid, serif display, one blue accent, white paper. */
+:root{
+  --bg:#ffffff; --surface:#f2f3f5; --ink:#16181d; --ink-2:#464b55; --ink-3:#80858f; --line:#e3e5e9;
+  --accent:#3f5ef0; --accent-soft:#eef1ff; --warn:#a4520c; --warn-soft:#f8f1e8;
+  --display:"Source Serif Pro","Noto Serif CJK SC",serif;
+  --title:100px; --thesis:34px; --body:30px; --small:24px; --gap:48px; --radius:6px; --mx:84px;
+}
+.run{padding-bottom:20px;border-bottom:3px solid var(--ink);color:var(--ink);font-weight:600}
+.run .pg{font-family:var(--display);font-weight:700;font-size:28px}
+.head{margin-top:64px}
+.title{font-weight:700;letter-spacing:-0.01em;line-height:1.12}
+.subtitle{font-family:var(--display);font-weight:400;color:var(--ink-2);font-size:42px}
+.thesis{font-family:var(--display);color:var(--ink);font-size:36px;line-height:1.55}
+.layout-cover .head{margin-top:84px}
+.layout-cover .title{font-size:118px}
+.layout-cover .thesis{margin-top:56px;padding-top:28px;border-top:1px solid var(--line);font-size:40px}
+.layout-cover .blocks{margin-top:52px;gap:40px}
+.b-title{font-size:26px;color:var(--accent);font-weight:700;margin-bottom:6px}
+.b-list li{border-top:1px solid var(--line);padding:16px 0;grid-template-columns:240px 1fr}
+.b-list li:last-child{border-bottom:1px solid var(--line)}
+.b-text{color:var(--ink)}
+.b-note{color:var(--ink-3)}
+.src{border-top:1px solid var(--line);margin-top:auto}
+.node{text-align:left;padding:20px 24px}
+.node.k-muted{box-shadow:none;background:transparent;border:2px solid var(--ink);border-radius:var(--radius)}
+.g-cell{padding:22px 22px 24px}
+.bar-track{height:34px}.bar-fill{border-radius:2px}
+.bar-val{font-family:var(--display);font-size:38px}
+/* Swiss side-heads: section titles sit in a narrow left column */
+.b-list{display:grid;grid-template-columns:168px minmax(0,1fr);column-gap:28px;align-items:start}
+.b-list .b-title{padding-top:17px;margin:0;line-height:1.4}
+.b-list li{grid-template-columns:200px 1fr;column-gap:20px}
+.b-note{padding-left:196px}
+.b-bars .b-title{margin-bottom:22px}

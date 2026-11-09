@@ -1,0 +1,86 @@
+NOTE='早期也有不少 AI 是靠人写规则做出来的，所以 AI 不全是机器学习。'
+T={
+'sketchnote':dict(bg='#F6F1E7',ink='#2a2522',acc='#E8573A',c1='#CFE3F5',c2='#FBD9C5',c3='#D5EEDC',c4='#E3DAF5',hl='#FFE27A',
+  tf='KL',bf='WK',il='d1_il.jpg',fs='solid',rough=1.6,sw=3.2,
+  extra='.poster{background-image:radial-gradient(#00000012 1.2px,transparent 1.4px);background-size:28px 28px}'),
+'crayon':dict(bg='#F3EAD6',ink='#3a2a20',acc='#D94B3D',c1='#9EC5EE99',c2='#F6C45399',c3='#9BCB7E99',c4='#F2A3A099',hl='#F6C453',
+  tf='KL',bf='WK',il='d2_il.jpg',fs='hachure',rough=2.6,sw=2.6,
+  extra='.poster::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.35;mix-blend-mode:multiply;background:url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%27300%27 height=%27300%27%3E%3Cfilter id=%27n%27%3E%3CfeTurbulence type=%27fractalNoise%27 baseFrequency=%27.8%27 numOctaves=%273%27/%3E%3CfeColorMatrix values=%270 0 0 0 .45 0 0 0 0 .35 0 0 0 0 .2 0 0 0 .5 0%27/%3E%3C/filter%3E%3Crect width=%27300%27 height=%27300%27 filter=%27url(%23n)%27/%3E%3C/svg%3E")}'),
+'excalidraw':dict(bg='#FFFFFF',ink='#1e1e1e',acc='#1971c2',c1='#a5d8ff',c2='#ffec99',c3='#b2f2bb',c4='#ffc9c9',hl='#ffec99',
+  tf='XL',bf='XL',il='d3_il.jpg',fs='hachure',rough=1.2,sw=2.2,
+  extra='.poster{background-image:linear-gradient(#e9ecef 1px,transparent 1px),linear-gradient(90deg,#e9ecef 1px,transparent 1px);background-size:40px 40px}'),
+}
+def R(fill,fs=None,sw=None,dash=False,stroke=None): 
+    return f'data-r="{fill}|{fs or ""}|{sw or ""}|{1 if dash else 0}|{stroke or ""}"'
+def page(k,t):
+    num=lambda n,c: f'<span class="num" {R(c,"solid")}>{n}</span>'
+    return f'''<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{{font-family:KL;src:url(__FONTS_DIR__/kuaile.ttf)}}
+@font-face{{font-family:WK;src:url(__FONTS_DIR__/wenkai.ttf)}}
+@font-face{{font-family:XL;src:url(__FONTS_DIR__/xiaolai.ttf)}}
+body{{margin:0}}*{{box-sizing:border-box}}
+.poster{{width:1080px;height:1440px;position:relative;overflow:hidden;background-color:{t["bg"]};color:{t["ink"]};font-family:{t["bf"]},sans-serif}}
+#rs{{position:absolute;inset:0;z-index:0}}
+.pad{{position:relative;z-index:1;height:100%;padding:58px 64px 46px;display:flex;flex-direction:column}}
+[data-r]{{position:relative}}
+.top{{display:flex;justify-content:space-between;align-items:center;font-family:{t["tf"]};font-size:28px}}
+.tag{{padding:10px 24px}}
+.t{{font-family:{t["tf"]};font-size:76px;line-height:1.15;margin:30px 0 0;display:inline-block;padding:14px 34px 18px}}
+.hl{{background:linear-gradient(transparent 55%,{t["hl"]} 55%,{t["hl"]} 92%,transparent 92%)}}
+.row{{display:flex;gap:20px}}
+.pt{{display:flex;gap:16px;font-size:34px;line-height:1.5;align-items:flex-start}}
+.num{{flex:none;width:54px;height:54px;display:inline-flex;align-items:center;justify-content:center;font-family:{t["tf"]};font-size:32px;color:#fff;margin-top:2px}}
+.chip{{font-family:{t["tf"]};font-size:32px;padding:10px 24px}}
+.h3{{font-family:{t["tf"]};font-size:56px;margin:0}}
+.card{{padding:26px 26px 30px;font-size:32px;line-height:1.55;text-wrap:pretty}}
+.card .lab{{font-family:{t["tf"]};font-size:40px;margin-bottom:10px;display:flex;align-items:center;gap:10px}}
+.vs{{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%) rotate(-8deg);width:92px;height:92px;display:flex;align-items:center;justify-content:center;font-family:{t["tf"]};font-size:38px;color:#fff;z-index:3}}
+.ft{{margin-top:auto;font-size:22px;opacity:.7;display:flex;justify-content:space-between;padding-top:10px}}
+.arr{{display:inline-block}}
+{t["extra"]}
+</style></head><body>
+<svg width="0" height="0" style="position:absolute"><filter id="crayon"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2"/><feDisplacementMap in="SourceGraphic" scale="2.2"/></filter></svg>
+<section class="poster" id="p"><svg id="rs" width="1080" height="1440"></svg><div class="pad">
+<div class="top"><span class="tag" {R(t["bg"],sw=2.4)}>示例合集 · 01</span><span>02 / 04</span></div>
+<div><h1 class="t" {R(t["c2"])}>AI 是程序，<span style="color:{t["acc"]}">不是生命</span></h1></div>
+<div class="row" style="margin-top:26px;align-items:center">
+ <div style="flex:1;display:flex;flex-direction:column;gap:20px">
+  <div class="pt">{num(1,t["acc"])}<div>AI 本质上是<span class="hl">电脑里运行的程序</span>。</div></div>
+  <div class="pt">{num(2,t["acc"])}<div>你给它输入，它经过计算，给你一个结果。</div></div>
+  <div class="row" style="align-items:center;gap:8px;margin-left:70px">
+   <span class="chip" {R(t["c1"])}>输入</span><span class="arr" data-arr="1" style="width:56px;height:36px"></span>
+   <span class="chip" {R(t["c2"])}>计算</span><span class="arr" data-arr="1" style="width:56px;height:36px"></span>
+   <span class="chip" {R(t["c3"])}>结果</span></div>
+ </div>
+ <img src="{t["il"]}" style="width:330px;flex:none">
+</div>
+<div class="row" style="margin-top:24px;align-items:center;gap:6px">
+ <div class="pt" style="flex:none">{num(3,t["acc"])}<div><b>它没有意识，<br>也没有感受。</b></div></div>
+ <span class="arr" data-arr="1" style="width:110px;height:50px;flex:none"></span>
+ <div class="card" style="flex:1;padding:20px 26px" {R(t["c4"],dash=True)}>它能写出带情绪的话，但它自己没有情绪。</div>
+</div>
+<div style="margin-top:40px;display:flex;align-items:center;gap:16px"><span class="h3" style="padding:4px 18px" {R(t["hl"],"solid",1)}>它的本事从哪来？</span><span class="arr" data-arr="1" style="width:120px;height:50px"></span></div>
+<div class="row" style="margin-top:24px;gap:84px;position:relative">
+ <div class="card" style="flex:1" {R(t["c1"])}><div class="lab">普通程序</div>怎么做事，全靠人提前把规则一条条写好。</div>
+ <div class="card" style="flex:1" {R(t["c3"],sw=t["sw"]*1.4)}><div class="lab" style="color:{t["acc"]}">现在大多数 AI</div>不一样：人给它大量数据，它自己从里面找出规律。</div>
+ <div class="vs" {R(t["ink"],"solid")}>VS</div>
+</div>
+<div style="display:flex;justify-content:flex-end;padding-right:220px"><span class="arr" data-arr="d" style="width:60px;height:70px"></span></div>
+<div class="card" style="padding:24px 30px" {R(t["c2"],dash=False)}><div style="font-family:{t["tf"]};font-size:42px">这种做法叫「<span style="color:{t["acc"]}">机器学习</span>」。</div><div style="font-size:29px;margin-top:6px;letter-spacing:-.5px">{NOTE}</div></div>
+<div class="ft"><span>来源：IBM / McCarthy / Google</span><span style="font-family:{t["tf"]}">一天一个小知识</span></div>
+</div></section>
+<script src="rough.js"></script><script>
+const svg=document.getElementById('rs'),rc=rough.svg(svg),P=document.getElementById('p').getBoundingClientRect();
+const base={{roughness:{t["rough"]},strokeWidth:{t["sw"]},stroke:'{t["ink"]}',fillStyle:'{t["fs"]}',hachureGap:{6 if k=='crayon' else (12 if k=='excalidraw' else 9)},fillWeight:{3.2 if k=="crayon" else 1.6},bowing:1.4}};
+document.querySelectorAll('[data-r]').forEach((el,i)=>{{const [f,fs,sw,dash,st]=el.dataset.r.split('|');const r=el.getBoundingClientRect();
+ const o=Object.assign({{}},base,{{fill:f,seed:i+3}});if(fs)o.fillStyle=fs;if(sw)o.strokeWidth=+sw;if(dash==='1')o.strokeLineDash=[12,9];if(st)o.stroke=st;
+ const x=r.left-P.left,y=r.top-P.top;
+ if(el.classList.contains('num')||el.classList.contains('vs'))svg.appendChild(rc.circle(x+r.width/2,y+r.height/2,r.width,o));
+ else svg.appendChild(rc.rectangle(x,y,r.width,r.height,o));}});
+document.querySelectorAll('[data-arr]').forEach((el,i)=>{{const r=el.getBoundingClientRect();const x=r.left-P.left,y=r.top-P.top,w=r.width,h=r.height;
+ const o={{roughness:1.2,strokeWidth:{t["sw"]+0.6},stroke:'{t["ink"]}',seed:i+40}};
+ if(el.dataset.arr==='d'){{svg.appendChild(rc.curve([[x+w/2,y+4],[x+w/2-10,y+h*.5],[x+w/2,y+h-6]],o));svg.appendChild(rc.linearPath([[x+w/2-14,y+h-22],[x+w/2,y+h-4],[x+w/2+14,y+h-22]],o));}}
+ else{{svg.appendChild(rc.curve([[x+4,y+h/2],[x+w*.5,y+h/2-10],[x+w-6,y+h/2]],o));svg.appendChild(rc.linearPath([[x+w-22,y+h/2-14],[x+w-4,y+h/2],[x+w-22,y+h/2+14]],o));}}}});
+document.body.dataset.done=1;
+</script></body></html>'''
+for k,t in T.items(): open(f'd_{k}.html','w').write(page(k,t))
