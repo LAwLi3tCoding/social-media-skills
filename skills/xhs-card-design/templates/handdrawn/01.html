@@ -1,0 +1,158 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:XL;src:url(__FONTS_DIR__/xiaolai.ttf)}
+@font-face{font-family:IN;src:url(file:///usr/share/fonts/truetype/sand-box/google/Inter/Inter-VariableFont_opsz,wght.ttf);font-weight:100 900}
+@font-face{font-family:WK;src:url(__FONTS_DIR__/wenkai.ttf)}
+body{margin:0}*{box-sizing:border-box}
+.poster{width:1080px;height:1440px;position:relative;overflow:hidden;background-color:#FFFEFB;color:#1e1e1e;font-family:XL,sans-serif;
+  background-image:linear-gradient(#eceff3 1px,transparent 1px),linear-gradient(90deg,#eceff3 1px,transparent 1px);background-size:36px 36px}
+#rs{position:absolute;inset:0;z-index:0}
+.pad{position:relative;z-index:1;height:100%;padding:40px 50px 0;display:flex;flex-direction:column}
+[data-r],[data-shape],[data-icon]{position:relative}
+.top{display:flex;justify-content:space-between;align-items:center;font-size:26px}
+.tag{padding:8px 20px}
+.en{font-family:IN,sans-serif;font-weight:600}
+.t{font-family:XL;font-size:108px;line-height:.95;letter-spacing:-.02em;margin:10px 0 0;display:block;padding:6px 8px 10px}
+.sub{font-size:46px;line-height:1.25;margin:8px 0 0;padding:4px 4px}
+.hl{background:linear-gradient(transparent 58%,#ffec99 58%,#ffec99 94%,transparent 94%)}
+.blob{padding:18px 24px 20px;font-size:30px;line-height:1.45}
+.blob .lab{font-size:34px;margin-bottom:6px}
+.meta{font-size:28px;line-height:1.45}
+.stepname{font-size:34px;padding:10px 16px 12px;text-align:center}
+.tiny{font-size:24px}
+.ico{flex:none;width:64px;height:64px}
+.arr{display:inline-block}
+.ft{margin-top:12px;font-size:22px;display:flex;justify-content:space-between;padding:8px 4px 0}
+.flow{display:flex;align-items:center;gap:8px}
+</style></head><body>
+<section class="poster" id="p"><svg id="rs" width="1080" height="1440"></svg><div class="pad">
+
+<div class="top">
+  <span class="tag" data-r="#ffffff||2.4|0|">示例合集 · 06</span>
+  <span>01 / 06</span>
+</div>
+<h1 class="t" data-uline="#1971c2">systematic-<br>debugging</h1>
+<div class="sub">让 AI 先找根因再改代码的调试 <span class="en">Skill</span></div>
+
+<div class="blob" style="margin-top:16px;transform:rotate(-0.7deg)" data-r="#ffec99|||0|">
+  <div class="lab">一条铁律</div>
+  根因还没查清，就不能提修复方案。
+</div>
+
+<div class="meta" style="margin-top:16px">
+  Jesse Vincent（GitHub 上的 obra）在 Superpowers 里的调试 <span class="en">Skill</span>，<span style="white-space:nowrap">MIT 协议</span>。
+  skills.sh 约 32.8 万次安装（2026-11-11）。
+  装进 Claude Code、Codex、Cursor 后，Agent 碰到报错或测试挂掉，会先查清根因再改代码。
+</div>
+
+<div style="margin-top:18px;font-size:28px">流程分四步，做完一步再进下一步：</div>
+<div style="margin-top:10px;display:flex;flex-direction:column;gap:0">
+  <div class="flow">
+    <span class="ico" data-icon="search"></span>
+    <div class="stepname" style="flex:1" data-r="#a5d8ff|||0|">01  查根因</div>
+    <span class="arr" data-arr="1" style="width:70px;height:44px;flex:none"></span>
+    <span class="ico" data-icon="compare"></span>
+    <div class="stepname" style="flex:1" data-r="#b2f2bb|||0|">02  找对照</div>
+  </div>
+  <div style="display:flex;justify-content:flex-end;padding-right:120px;height:50px">
+    <span class="arr" data-arr="d" style="width:50px;height:50px"></span>
+  </div>
+  <div class="flow">
+    <span class="ico" data-icon="check"></span>
+    <div class="stepname" style="flex:1" data-r="#ffc9c9|||0|">04  修复</div>
+    <span class="arr" data-arr="l" style="width:70px;height:44px;flex:none"></span>
+    <span class="ico" data-icon="bulb"></span>
+    <div class="stepname" style="flex:1" data-r="#ffec99|||0|">03  验假设</div>
+  </div>
+</div>
+
+<div style="margin-top:14px;display:flex;gap:14px;align-items:flex-start;flex:none">
+  <div class="blob" style="flex:1.15;transform:rotate(0.6deg)" data-r="#a5d8ff|||1|">
+    <div class="lab">刹车</div>
+    同一个问题修了 3 次还没好，就停下来质疑架构，先和人商量。
+  </div>
+  <div class="blob" style="flex:1;transform:rotate(-0.8deg)" data-r="#ffc9c9|||0|">
+    <div class="lab">危险念头</div>
+    「先快速修一下，回头再查」一冒出来，就要回到第一步。
+  </div>
+</div>
+<div class="blob" style="margin-top:14px;transform:rotate(-0.3deg);flex:none" data-r="#b2f2bb|||0|">
+  <div class="lab">怎么装</div>
+  <div style="font-family:IN,sans-serif;font-weight:600;font-size:24px;letter-spacing:-.02em;margin:4px 0 6px">npx skills add obra/superpowers --skill systematic-debugging</div>
+  用 --skill 只装这一个，另外两个须另装，或装整个 Superpowers。任何问题都要走完四步，简单的也不许跳过。
+</div>
+<div class="ft" style="margin-top:auto;background:#FFFEFB;padding:14px 8px 18px;flex:none"><span>来源：obra/superpowers</span><span>MIT 协议</span></div>
+</div></section>
+
+<script src="rough.js"></script><script>
+const svg=document.getElementById('rs'),rc=rough.svg(svg),P=document.getElementById('p').getBoundingClientRect();
+const base={roughness:1.35,strokeWidth:2.3,stroke:'#1e1e1e',fillStyle:'hachure',hachureGap:11,fillWeight:1.5,bowing:1.8};
+document.querySelectorAll('[data-r]').forEach((el,i)=>{
+  const [f,fs,sw,dash,st]=el.dataset.r.split('|');
+  const r=el.getBoundingClientRect();
+  const o=Object.assign({},base,{fill:f,seed:i+7});
+  if(fs)o.fillStyle=fs; if(sw)o.strokeWidth=+sw; if(dash==='1')o.strokeLineDash=[10,8]; if(st)o.stroke=st;
+  const x=r.left-P.left,y=r.top-P.top,w=r.width,h=r.height;
+  const shape=el.dataset.shape||'rect';
+  if(shape==='circle'||el.classList.contains('num')||el.classList.contains('vs'))
+    svg.appendChild(rc.circle(x+w/2,y+h/2,Math.max(w,h)*0.96,o));
+  else if(shape==='ellipse')
+    svg.appendChild(rc.ellipse(x+w/2,y+h/2,w*0.98,h*0.92,o));
+  else
+    svg.appendChild(rc.rectangle(x,y,w,h,o));
+});
+document.querySelectorAll('[data-arr]').forEach((el,i)=>{
+  const r=el.getBoundingClientRect();const x=r.left-P.left,y=r.top-P.top,w=r.width,h=r.height;
+  const o={roughness:2.1,strokeWidth:3.0,stroke:'#1e1e1e',bowing:2.4,seed:i+80};
+  const dir=el.dataset.arr;
+  if(dir==='d'){
+    svg.appendChild(rc.curve([[x+w/2+4,y+2],[x+w/2-12,y+h*.45],[x+w/2+2,y+h-6]],o));
+    svg.appendChild(rc.linearPath([[x+w/2-16,y+h-24],[x+w/2,y+h-3],[x+w/2+16,y+h-24]],o));
+  } else if(dir==='u'){
+    svg.appendChild(rc.curve([[x+w/2,y+h-2],[x+w/2+10,y+h*.5],[x+w/2,y+4]],o));
+    svg.appendChild(rc.linearPath([[x+w/2-14,y+22],[x+w/2,y+3],[x+w/2+14,y+22]],o));
+  } else if(dir==='l'){
+    svg.appendChild(rc.curve([[x+w-4,y+h/2],[x+w*.5,y+h/2+10],[x+6,y+h/2]],o));
+    svg.appendChild(rc.linearPath([[x+22,y+h/2-14],[x+4,y+h/2],[x+22,y+h/2+14]],o));
+  } else {
+    svg.appendChild(rc.curve([[x+4,y+h/2+3],[x+w*.5,y+h/2-12],[x+w-6,y+h/2]],o));
+    svg.appendChild(rc.linearPath([[x+w-24,y+h/2-16],[x+w-4,y+h/2],[x+w-24,y+h/2+16]],o));
+  }
+});
+document.querySelectorAll('[data-icon]').forEach((el,i)=>{
+  const r=el.getBoundingClientRect();const x=r.left-P.left,y=r.top-P.top,w=r.width,h=r.height;
+  const o={roughness:1.6,strokeWidth:2.6,stroke:'#1e1e1e',bowing:1.8,seed:i+120};
+  const cx=x+w/2,cy=y+h/2, type=el.dataset.icon;
+  if(type==='search'){
+    svg.appendChild(rc.circle(x+w*0.42,y+h*0.40,w*0.58,o));
+    svg.appendChild(rc.line(x+w*0.62,y+h*0.62,x+w*0.90,y+h*0.90,o));
+  } else if(type==='compare'){
+    svg.appendChild(rc.rectangle(x+4,y+8,w*0.52,h*0.7,o));
+    svg.appendChild(rc.rectangle(x+w*0.36,y+h*0.22,w*0.52,h*0.7,o));
+  } else if(type==='bulb'){
+    svg.appendChild(rc.circle(cx,y+h*0.38,w*0.62,o));
+    svg.appendChild(rc.rectangle(x+w*0.32,y+h*0.68,w*0.36,h*0.18,o));
+    svg.appendChild(rc.line(x+w*0.34,y+h*0.92,x+w*0.66,y+h*0.92,o));
+  } else if(type==='check'){
+    svg.appendChild(rc.circle(cx,cy,w*0.9,o));
+    svg.appendChild(rc.linearPath([[x+w*0.25,y+h*0.5],[x+w*0.44,y+h*0.7],[x+w*0.76,y+h*0.32]],Object.assign({},o,{strokeWidth:3})));
+  } else if(type==='star'){
+    const pts=[];
+    for(let k=0;k<5;k++){
+      const a=-Math.PI/2+k*2*Math.PI/5;
+      pts.push([cx+Math.cos(a)*w*0.42, cy+Math.sin(a)*h*0.42]);
+    }
+    svg.appendChild(rc.polygon([pts[0],pts[2],pts[4],pts[1],pts[3]],o));
+  } else if(type==='warn'){
+    svg.appendChild(rc.polygon([[cx,y+4],[x+w-4,y+h-4],[x+4,y+h-4]],o));
+    svg.appendChild(rc.line(cx,y+h*0.38,cx,y+h*0.62,o));
+    svg.appendChild(rc.circle(cx,y+h*0.74,5,Object.assign({},o,{fill:'#1e1e1e',fillStyle:'solid'})));
+  }
+});
+document.querySelectorAll('[data-uline]').forEach((el,i)=>{
+  const r=el.getBoundingClientRect();const x=r.left-P.left,y=r.bottom-P.top-6,w=r.width;
+  const o={roughness:2.2,strokeWidth:3.2,stroke:el.dataset.uline||'#1971c2',bowing:2.6,seed:i+200};
+  svg.appendChild(rc.curve([[x,y],[x+w*0.33,y+7],[x+w*0.66,y-5],[x+w,y+3]],o));
+});
+document.body.dataset.done=1;
+</script>
+</body></html>

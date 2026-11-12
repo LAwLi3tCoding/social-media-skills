@@ -1,0 +1,96 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:XL;src:url(__FONTS_DIR__/xiaolai.ttf)}
+@font-face{font-family:WK;src:url(__FONTS_DIR__/wenkai.ttf)}
+@font-face{font-family:IN;src:url(file:///usr/share/fonts/truetype/sand-box/google/Inter/Inter-VariableFont_opsz,wght.ttf);font-weight:100 900}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1080px;height:1440px;overflow:hidden}
+.page{width:1080px;height:1440px;position:relative;overflow:hidden;color:#3B2E29;font-family:WK,sans-serif;
+  background-color:#FFFBF2;background-image:linear-gradient(#BFD9EE55 1.5px,transparent 1.5px),linear-gradient(90deg,#BFD9EE55 1.5px,transparent 1.5px);background-size:40px 40px;
+  padding:44px 52px 0;display:flex;flex-direction:column}
+.en{font-family:IN,sans-serif;font-weight:700}
+.cmd{font-family:IN,sans-serif;font-weight:650;letter-spacing:-.03em;word-break:break-all}
+.tape{position:absolute;height:42px;opacity:.88;box-shadow:0 2px 4px #0001;z-index:4;pointer-events:none}
+.tape.pink{background:repeating-linear-gradient(45deg,#F8C8D0 0 12px,#FBD9DF 12px 24px)}
+.tape.mint{background:repeating-linear-gradient(45deg,#C9EEDD 0 12px,#DDF5EA 12px 24px)}
+.tape.butter{background:repeating-linear-gradient(45deg,#F6E2A8 0 12px,#FBF0C8 12px 24px)}
+.top{display:flex;justify-content:space-between;align-items:center;position:relative;z-index:2;flex:none}
+.badge{font-family:XL;font-size:28px;padding:8px 26px;background-color:#D8ECFA;transform:rotate(-2deg);box-shadow:0 3px 6px #8a6a5020}
+.pn{width:86px;height:86px;border-radius:50%;background-color:#FFF0C2;border:5px solid #fff;box-shadow:0 3px 10px #8a6a5028;font-family:XL;font-size:26px;display:flex;align-items:center;justify-content:center;text-align:center;line-height:1.1}
+h1.word{font-family:IN,sans-serif;font-weight:800;font-size:92px;line-height:.95;letter-spacing:-.04em;color:#2A221E;margin-top:10px;flex:none}
+.sub{font-family:XL;font-size:40px;line-height:1.3;margin-top:10px}
+.sub .mk{background:linear-gradient(transparent 58%,#FFD3DC 58%,#FFD3DC 94%,transparent 94%);padding:0 4px}
+.note{position:relative;padding:34px 24px 20px;box-shadow:3px 8px 16px #8a6a5030;font-size:28px;line-height:1.5;
+  background-image:repeating-linear-gradient(transparent 0 30px,rgba(90,60,50,.35) 30px 32px);background-position:0 40px}
+.note h3{font-family:XL;font-weight:400;font-size:34px;margin-bottom:6px}
+.note p,.note .body{font-family:WK;font-size:26px;line-height:1.5}
+.note .tp{position:absolute;top:-16px;left:50%;width:130px;height:36px;margin-left:-65px;background-color:#ffffffc8;border:1px solid #0000000d;box-shadow:0 1px 2px #0001}
+.sheet{background-color:#fff;border-radius:8px;box-shadow:0 6px 16px #8a6a5020;padding:18px 26px 18px 64px;position:relative;flex:none;
+  background-image:repeating-linear-gradient(transparent 0 46px,#F2D7C9 46px 48px);background-position:0 16px;font-size:26px;line-height:46px;margin-top:14px}
+.sheet:before{content:"";position:absolute;left:22px;top:16px;bottom:16px;width:16px;background:radial-gradient(circle,#EADBC8 6px,transparent 7px) 0 0/16px 46px}
+.row{display:flex;gap:20px;align-items:stretch}
+.mini{padding:16px 14px 18px;box-shadow:3px 6px 12px #8a6a5026;font-family:XL;font-size:28px;text-align:center}
+.lead{font-size:28px;line-height:1.5;margin:8px 0 4px;flex:none}
+.h{font-family:XL;font-size:52px;line-height:1.2;margin-top:12px;flex:none}
+.mid{flex:1 1 auto;display:flex;flex-direction:column;gap:22px;min-height:0;margin-top:14px;margin-bottom:12px}
+.mid .note{flex:1 1 auto}
+.mid .chips{flex:0 0 auto}
+.foot{flex:none;padding:14px 52px 18px;display:flex;justify-content:space-between;font-size:22px;color:#6d5c52;background-color:#FFF6E8;border-top:2px dashed #E8B9A8;margin-left:-52px;margin-right:-52px}
+</style></head><body>
+<div class="page">
+
+<div class="tape pink" style="width:210px;left:-28px;top:36px;transform:rotate(-32deg)"></div>
+<div class="tape mint" style="width:190px;right:-40px;top:70px;transform:rotate(28deg)"></div>
+<div class="top"><span class="badge">示例合集 · 06</span><span class="pn">01 / 06</span></div>
+<div class="note" style="position:absolute;right:36px;top:228px;width:230px;background-color:#FFF0C2;transform:rotate(3.2deg);padding:28px 16px 16px;z-index:3;font-size:24px;line-height:1.4">
+  <span class="tp" style="transform:rotate(4deg);width:90px;margin-left:-45px"></span>
+  MIT 协议<br><span style="white-space:nowrap">约 32.8 万次安装</span><br>2026-11-11
+</div>
+<h1 class="word">systematic-<br>debugging</h1>
+<div class="sub" style="padding-right:250px"><span class="mk">让 AI 先找根因再改代码</span>的调试 <span class="en">Skill</span></div>
+
+<div class="sheet">
+Jesse Vincent（GitHub 上的 obra）在 Superpowers 里的调试 Skill，MIT 协议。<br>
+skills.sh 约 32.8 万次安装（2026-11-11）。装进 Claude Code、Codex、Cursor 后，Agent 碰到报错或测试挂掉，会先查清根因再改代码。
+</div>
+
+<div class="mid">
+<div class="row">
+  <div class="note" style="background-color:#FFF0C2;flex:1.25;transform:rotate(-1.2deg)">
+    <span class="tp" style="transform:rotate(-4deg)"></span>
+    <h3>一条铁律</h3>
+    <p>根因还没查清，就不能提修复方案。流程分四步，做完一步再进下一步。</p>
+  </div>
+  <div class="note" style="background-color:#D8ECFA;flex:1;transform:rotate(1.3deg)">
+    <span class="tp" style="transform:rotate(3deg)"></span>
+    <h3>谁做的</h3>
+    <p>Jesse Vincent（obra）<br>协议 MIT<br>平台：Claude Code、Codex、Cursor</p>
+  </div>
+</div>
+
+<div class="chips">
+<div style="font-family:XL;font-size:28px;margin-bottom:10px">四步流程</div>
+<div class="row" style="gap:14px">
+  <div class="mini" style="background-color:#D3EFE2;flex:1;transform:rotate(-1.2deg)">01 查根因</div>
+  <div class="mini" style="background-color:#FFE3D3;flex:1;transform:rotate(1.0deg)">02 找对照</div>
+  <div class="mini" style="background-color:#E5DBF5;flex:1;transform:rotate(-0.7deg)">03 验假设</div>
+  <div class="mini" style="background-color:#FAD7DF;flex:1;transform:rotate(1.4deg)">04 修复</div>
+</div>
+</div>
+
+<div class="row">
+  <div class="note" style="background-color:#D3EFE2;flex:1.15;transform:rotate(0.5deg)">
+    <span class="tp" style="transform:rotate(2deg)"></span>
+    <h3>任何问题都要走完四步</h3>
+    <p>简单的也不许跳过。同一个问题修了 3 次还没好，就停下来质疑架构，先和人商量。</p>
+  </div>
+  <div class="note" style="background-color:#FFE3D3;flex:1;transform:rotate(-0.9deg)">
+    <span class="tp" style="transform:rotate(-3deg)"></span>
+    <h3>怎么装</h3>
+    <p class="cmd" style="font-size:18px;line-height:1.4;margin:4px 0 8px">npx skills add obra/superpowers<br>--skill systematic-debugging</p>
+    <p>用 --skill 只装这一个，另外两个须另装，或装整个 Superpowers。</p>
+  </div>
+</div>
+</div>
+
+<div class="foot"><span>来源：obra/superpowers</span><span>MIT 协议</span></div>
+</div></body></html>

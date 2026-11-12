@@ -1,10 +1,12 @@
 ---
 name: social-copywriting
-description: 写或改 AI/开发者向的小红书标题、正文、话题和图卡文字时用（X 的共用语言规则也在这里）：标题规则、笔记骨架、叙述口吻、禁用句式与套话、自我削弱措辞禁令、去 AI 味流程和 lint 自查。
+description: >-
+  写或改 AI/开发者向的小红书标题、正文、话题和图卡文字时用（X
+  的共用语言规则也在这里）：标题规则、笔记骨架、叙述口吻、禁用句式与套话、自我削弱措辞禁令、去 AI 味流程和 lint 自查。
 ---
 # 社媒文案：标题、正文、去 AI 味
 
-前置：选题已过 `content-quality-gate`，可实测项已有 `verify/` 日志。账号口吻和额外禁用词可放在你自己的偏好文件里（可选，见 `--profile`）。形式选择的数据依据见 `references/platform-evidence.md`，深度写法样例见 `references/x-depth-guide.md`。
+前置：选题已过 `content-quality-gate`（含已发查重），可实测项已有 `verify/` 日志。账号口吻和额外禁用词见用户的偏好层（如已安装的 `content-profile`）。形式选择的数据依据见 `references/platform-evidence.md`，深度写法样例见 `references/x-depth-guide.md`。
 
 ## 1. 语气
 
@@ -18,57 +20,62 @@ description: 写或改 AI/开发者向的小红书标题、正文、话题和图
 ## 2. 禁用（`scripts/lint_copy.py` 全部覆盖）
 
 - 句式：「A 了，不等于 B」及同构变体「……并不意味着……」「……不代表……」。
+- 句式：禁止「不是……」否定对照（「这不是……」「……，不是……」「不是……而是……」），一律改成正面直述。
+- 句式：「他的思路是」「他的做法是」，直接写思路或做法本身。
 - 自我削弱：「本机未实测」「未复现」「没实测」「没跑过」「未验证」。验证不了的那条删掉或只陈述来源原话（见 `content-quality-gate` §4）。
 - 套话：总而言之、综上所述、不得不说、赋能、颠覆、炸裂、封神、必看、建议收藏、干货满满、保姆级、一文读懂、关注我。
 - 种草与煽情钩子：姐妹们、宝宝们、绝绝子、救命、破防了、扣1；吓人开头钩子；生活化硬比喻。
 - 口语俗语：挺香、甩开一截、压着打。
 - 结尾不写「你怎么看？评论区聊聊」：留一个具体问题，或直接结束。
-- 账号特有禁词：用 `--extra-ban 词1,词2` 或偏好文件里的 `ban:` 行追加，不进默认列表。
 
 ## 3. 标题
 
-- 长度 ≤20 字（含编号前缀）；不以中文句号结尾。
+- 长度 ≤20 字（含编号前缀），按小红书算法数：英文字母、数字、空格等半角字符两个算一个字（「Pocock：怎么同时在多个仓库里使用 Agent」= 19 字，没超）。拿不准就跑 `lint_copy.py`，别按 `len()` 手数后自作主张缩标题。
+- 不以中文句号结尾。
+- 转述别人的方法、观点时，标题带上作者名（例：「Pocock：怎么同时在多个仓库里使用 Agent」）。
 - 一眼看出谁、用什么、做了什么（例：「Karpathy用Claude做了HackerTube」）。
 - 核心产品名用全称原样写，作搜索关键词（「DeepSeek Harness」不省略、不改写）。
 - 不夸大：标题承诺不超过正文和实测能证明的范围。
+- 不堆冷门术语，不放没交代对比对象的数字（反例「性质测试实测抓Bug11/12」）；让普通开发者一眼看懂这东西有什么用。
 - 可带数字或「怎么选」；真有多项可交付条目才写清单式标题，不编数量。
-- 若另有批量起标题的工具：取 3–5 个候选按本节筛，给推荐，再定稿。
+- 用 `space-xhs-title` 时：取 3–5 个候选按本节筛，给推荐，等用户定。
 
 ## 4. 正文骨架（小红书）
 
 一句话说清（谁 / 用什么 / 做了什么 + 最关键数字）→ 实际怎么用、实测结果（来自 `verify/`）→ 机制（一两句原理，术语就地解释）→ 代价与反例（额度、时间、安全，写进叙述，不单列小标题）→ 和读者有什么关系 → 原帖 / 来源。
 
+- 工具、Skill 介绍：开头一两句先讲清是谁出的什么东西、装上后有什么用，再讲概念和实测；封面同理，不能只写实测数字。
+- 小红书正文不写「repo#123」这类带 # 的写法（编辑器会当成话题），改成「repo 的第 123 号 issue」或直接给链接。
 - 每段一个判断，紧跟证据；证据用实测输出、日志、官方原文、issue / commit，并说清来源。
 - 产品全称：OpenAI Codex、Anthropic Claude Code、Cursor；Model Context Protocol 首次出现时说明简称 MCP；引文保留原字样。
 - 引用外国大 V：给原句的中文意思，点明身份和利益位置（如「Codex 负责人」）。
 - 没有自己的操作记录，就从来源作者写起，不借第一人称冒充亲历。
 - 夸要具体：说清程度和原因，不说 amazing / 太强了。
-- 长度：正文 + 话题 ≤1000 字，起草控制在约 900 字。
+- 长度：正文 + 话题 ≤1000 字（同样两个半角字符算一个字），起草控制在约 900 字。
 
 ## 5. 去 AI 味（交付前必做）
 
-可选依赖 lieflat-less-ai-tone（**CC BY-NC 4.0，不随本仓库分发**）：`npx skills add larashero3-dotcom/lieflat-less-ai-tone -g -y`。
+依赖 lieflat-less-ai-tone（CC BY-NC 4.0，不随包分发）：`npx skills add larashero3-dotcom/lieflat-less-ai-tone -g -y`。
 
 ```bash
 LIEFLAT=${LIEFLAT:-$(ls -d ~/.agents/skills/lieflat-less-ai-tone ~/.claude/skills/lieflat-less-ai-tone 2>/dev/null | head -1)}
 python3 "$LIEFLAT/scripts/detect.py" draft.md --json          # 需要时加 --candidates
 ```
 
-1. 成稿写入临时 md，跑检测。汉字少于 500 时 detect.py 会提示「检测无意义」并不出结果（小红书短稿常见）：改为对照 `$LIEFLAT/references/semantic-criteria.md` 人工逐句过一遍，再跑本 skill 的 `lint_copy.py`。
-2. 按该工具白名单和 X 级保留区做最小润色：信息守恒、结构不动；序数小标题、空转引列表等 X 级内容不改。
-3. 交付润色后的稿。改动少就直接交稿；改动大时附一句改了哪些。
-4. 不跳过检测把生稿当终稿；不做同义扩写或营销润色。
-5. 英文短文可再对照常见 “unslop” 规则砍套话。
-6. 企业内部知识库文稿另走各自流程；社媒稿不回写内部库。
+若默认 skill 目录没有 lieflat，用偏好层里写的本机路径设置 `LIEFLAT`。
 
-若未安装 lieflat：跳过自动检测，仍须跑 `lint_copy.py`，并人工对照禁用清单。
+1. 成稿写入临时 md，跑检测。汉字少于 500 时 detect.py 会提示「检测无意义」并不出结果（小红书短稿常见）：改为对照 `$LIEFLAT/references/semantic-criteria.md` 人工逐句过一遍，再跑本 skill 的 `lint_copy.py`。
+2. 按 lieflat 白名单和 X 级保留区做最小润色：信息守恒、结构不动；序数小标题、空转引列表等 X 级内容不改。
+3. 交付润色后的稿。改动少就直接交稿；改动大或用户要看时，附一句改了哪些。
+4. 不跳过检测把生稿当终稿；不做同义扩写或营销润色。
+5. 英文短文可再对照 `unslop` 规则砍套话。
+6. 企业内部知识库文稿另走各自流程；社媒稿不回写内部库。
 
 ## 6. 交付前自查
 
 ```bash
-python3 scripts/lint_copy.py --title title.txt --body body.txt --tags tags.txt
-# 可选：--profile preferences.md   # 文件中 ban: 词1,词2 行会追加禁用词
-# 可选：--extra-ban 词1,词2
+python3 scripts/lint_copy.py --title title.txt --body body.txt --tags tags.txt --profile <偏好层>/SKILL.md
 python3 scripts/lint_copy.py --text cards_src/*.html          # 图卡文字同样适用
-rg -n "不等于|不意味着|不代表|未实测|未复现|没实测|没跑过|未验证|本机未" <稿目录>   # 应为 0 行
+rg -n "不等于|不意味着|不代表|不是|他的思路是|他的做法是|未实测|未复现|没实测|没跑过|未验证|本机未" <稿目录>   # 应为 0 行
+rg -n "[A-Za-z]#[0-9]" body.txt                                # 应为 0 行
 ```

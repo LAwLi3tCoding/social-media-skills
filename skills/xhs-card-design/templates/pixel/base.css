@@ -1,4 +1,4 @@
-/* 像素游戏风模板 —— 共用样式（所有页面引用） */
+/* 像素游戏风 · 示例合集 —— 共用样式（所有页面引用） */
 @font-face{font-family:Pixel;src:url(assets/fonts/pixel.ttf)}
 :root{
   --ink:#1B1F3B;      /* 边框、正文 */

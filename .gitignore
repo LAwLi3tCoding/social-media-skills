@@ -11,8 +11,10 @@ venv/
 **/fonts/**/*.otf
 **/fonts/**/*.woff*
 
-# render outputs
+# render outputs（稿件目录下的 cards/）。模板 skills/xhs-card-design/templates/cards/ 要进仓库。
 **/cards/
+!skills/xhs-card-design/templates/cards/
+!skills/xhs-card-design/templates/cards/**
 **/cards_src/
 **/out/
 **/post*_pixel/

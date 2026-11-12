@@ -1,0 +1,3 @@
+rough.js is the MIT-licensed library from https://roughjs.com / https://github.com/rough-stuff/rough
+Copyright (c) Preet Shihn and rough.js contributors.
+Bundled here as a minified browser build for the doodle templates only.

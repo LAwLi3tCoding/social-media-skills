@@ -1,0 +1,66 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:IN;src:url(file:///usr/share/fonts/truetype/sand-box/google/Inter/Inter-VariableFont_opsz,wght.ttf);font-weight:100 900}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1080px;height:1440px;overflow:hidden}
+.page{width:1080px;height:1440px;position:relative;overflow:hidden;background:#F6F3EE;color:#1C1917;
+  font-family:"Noto Sans CJK SC","Noto Sans SC",sans-serif;
+  padding:36px 52px 0;display:flex;flex-direction:column}
+.en{font-family:IN,sans-serif;font-weight:700}
+.top{display:flex;justify-content:space-between;align-items:center}
+.badge{font-size:22px;letter-spacing:.06em;font-weight:700;color:#0F6E6E;background:#D8EBEB;padding:8px 16px}
+.pn{font-family:IN,sans-serif;font-weight:600;font-size:22px;color:#57534E;letter-spacing:.08em}
+h1.word{font-family:IN,sans-serif;font-weight:800;font-size:88px;line-height:.92;letter-spacing:-.045em;margin-top:12px;color:#1C1917}
+.sub{font-size:40px;font-weight:700;line-height:1.3;margin-top:16px}
+ .bar{margin-top:10px;background:#0F6E6E;color:#F6F3EE;padding:16px 22px}
+.bar .k{font-family:IN,sans-serif;font-size:13px;letter-spacing:.16em;text-transform:uppercase;opacity:.85;font-weight:700}
+.bar .v{font-size:32px;font-weight:700;line-height:1.4;margin-top:6px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:10px}
+.card{background:#FFFcf8;box-shadow:0 10px 28px rgba(28,25,23,.10);padding:14px 20px}
+.card .k{font-family:IN,sans-serif;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#0F6E6E;font-weight:700}
+.card .v{font-size:26px;line-height:1.45;margin-top:8px}
+.intro{font-size:25px;line-height:1.45;margin-top:8px;color:#292524}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:10px}
+.step{background:#FFFcf8;box-shadow:0 8px 22px rgba(28,25,23,.10);padding:16px 12px;text-align:center}
+.step .n{font-family:IN,sans-serif;font-weight:800;font-size:28px;color:#0F6E6E}
+.step .l{font-size:26px;font-weight:700;margin-top:4px}
+h2{font-size:56px;font-weight:700;line-height:1.15;margin-top:18px}
+.lead{font-size:28px;line-height:1.5;margin:10px 0 16px;color:#44403C}
+.sc{background:#FFFcf8;box-shadow:0 10px 28px rgba(28,25,23,.10);padding:14px 18px;display:grid;grid-template-columns:72px 1fr;gap:14px;align-items:start;margin-top:10px}
+.num{width:64px;height:64px;background:#0F6E6E;color:#F6F3EE;font-family:IN,sans-serif;font-weight:800;font-size:26px;display:flex;align-items:center;justify-content:center}
+.sc h3{font-size:30px;font-weight:700;margin-bottom:6px}
+.sc p{font-size:25px;line-height:1.5;color:#292524}
+.foot{margin-top:auto;margin-left:-52px;margin-right:-52px;padding:0 52px;min-height:56px;border-top:2px solid #1C1917;display:flex;justify-content:space-between;align-items:center;font-size:22px;color:#F6F3EE;background:#1C1917;flex:none}
+</style></head><body>
+<div class="page">
+<div class="top"><span class="badge">示例合集 · 06</span><span class="pn">01 / 06</span></div>
+<div style="display:flex;gap:20px;align-items:flex-end;margin-top:12px">
+  <h1 class="word" style="margin-top:0;flex:1">systematic-<br>debugging</h1>
+  <div class="card" style="width:250px;flex:none;margin-bottom:6px">
+    <div class="k">调试 Skill</div>
+    <div class="v">MIT 协议<br>约 32.8 万次安装<br>2026-11-11</div>
+  </div>
+</div>
+<div class="sub">让 AI 先找根因再改代码的调试 <span class="en">Skill</span></div>
+<div class="bar"><div class="k">一条铁律</div><div class="v">根因还没查清，就不能提修复方案。</div></div>
+<div class="intro">Jesse Vincent（GitHub 上的 obra）在 Superpowers 里的调试 Skill，MIT 协议。装进 Claude Code、Codex、Cursor 后，Agent 碰到报错或测试挂掉，会先查清根因再改代码。</div>
+<div class="grid">
+  <div class="card"><div class="k">安装</div><div class="v">skills.sh 约 32.8 万次<br>（2026-11-11）</div></div>
+  <div class="card"><div class="k">作者</div><div class="v">Jesse Vincent<br>（obra）</div></div>
+  <div class="card"><div class="k">协议</div><div class="v">MIT 协议，开源可直接装进常用 Agent。</div></div>
+  <div class="card"><div class="k">平台</div><div class="v">Claude Code、Codex、Cursor</div></div>
+</div>
+<div class="steps">
+  <div class="step"><div class="n">01</div><div class="l">查根因</div></div>
+  <div class="step"><div class="n">02</div><div class="l">找对照</div></div>
+  <div class="step"><div class="n">03</div><div class="l">验假设</div></div>
+  <div class="step"><div class="n">04</div><div class="l">修复</div></div>
+</div>
+<div class="intro" style="margin-top:16px">流程分四步，做完一步再进下一步。任何问题都要走完四步，简单的也不许跳过。</div>
+<div class="grid" style="margin-top:16px">
+  <div class="card"><div class="k">刹车</div><div class="v">同一个问题修了 3 次还没好，就停下来质疑架构，先和人商量。</div></div>
+  <div class="card"><div class="k">危险念头</div><div class="v">「先快速修一下，回头再查」一冒出来，就要回到第一步。</div></div>
+</div>
+<div class="card" style="margin-top:16px"><div class="k">安装</div><div class="v" style="font-family:IN,sans-serif;font-weight:650;letter-spacing:-.03em;font-size:22px">npx skills add obra/superpowers --skill systematic-debugging</div>
+<div class="v" style="margin-top:6px">用 --skill 只装这一个，另外两个须另装，或装整个 Superpowers。</div></div>
+<div class="foot"><span>来源：obra/superpowers</span><span>MIT 协议</span></div>
+</div></body></html>

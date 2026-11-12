@@ -1,0 +1,136 @@
+{
+  "_comment": "示例内容（Claude Fable 5.2 已核查数字）。换稿时只改本文件，不要改 gen.py / magazine.css。",
+  "theme": "anthropic",
+  "pages": [
+    {
+      "type": "cover",
+      "mast_left": "AI资讯",
+      "mast_right": "ANTHROPIC · CLAUDE",
+      "title": "Claude Fable 5.2 发布",
+      "dek": "Anthropic 新模型 · 所有 Claude API 用户都能直接调用",
+      "giant": "−20%",
+      "giant_sub": "比 5.1 便宜",
+      "cards": [
+        {"no": "01 价格", "value": "$8/$40", "desc": "每百万 token 输入 / 输出，5.1 是 $10 / $50"},
+        {"no": "02 规格", "value": "1M", "desc": "上下文窗口，最大输出 128K"},
+        {"no": "03 fast", "value": "2.5×", "desc": "输出最快速度，价格 $16 / $80"}
+      ],
+      "source": "来源：Anthropic 官方文档发布说明"
+    },
+    {
+      "type": "compare",
+      "mast_left": "价格与规格",
+      "mast_right": "CLAUDE FABLE 5.2",
+      "title": "5.1 → 5.2，价格这样变",
+      "lede": "每百万 token · 模型 ID <span class='mono'>claude-fable-5-2</span>",
+      "rows": [
+        {"label": "输入", "old": "$10", "new": "$8"},
+        {"label": "输出", "old": "$50", "new": "$40"}
+      ],
+      "specs": [
+        {"value": "1M", "label": "上下文窗口"},
+        {"value": "128K", "label": "最大输出"}
+      ],
+      "band": {
+        "title": "fast 模式",
+        "sub": "输出速度最高",
+        "value": "2.5×",
+        "right_label": "每百万 token",
+        "right_value": "$16 / $80"
+      },
+      "note": {
+        "tag": "Mythos 5.2",
+        "title": "能力相同",
+        "body": "只开放给通过 Anthropic 验证项目的组织"
+      },
+      "source": "来源：Anthropic 官方文档发布说明"
+    },
+    {
+      "type": "bars_v",
+      "mast_left": "编程跑分",
+      "mast_right": "CURSOR",
+      "header_no": "4.0",
+      "title": "CursorBench",
+      "subtitle": "Cursor 当天接入了 Fable 5.2",
+      "chart_height": 610,
+      "max": 60,
+      "bars": [
+        {"name": "Fable 5.2", "tag": "max effort", "value": 60, "unit": "%", "style": "max"},
+        {"name": "Fable 5.2", "tag": "默认（high）effort", "value": 56.9, "unit": "%", "style": "high"},
+        {"name": "Fable 5.1", "tag": "同档（high）", "value": 49.2, "unit": "%", "style": "old"}
+      ],
+      "bracket": "同一档（high）对比",
+      "banner": {
+        "text": "这组分数由 Cursor 官方公布<br><span>不是第三方复测，第三方榜单见后两页</span>"
+      },
+      "source": "来源：Cursor 官方推文"
+    },
+    {
+      "type": "bars_v",
+      "mast_left": "第三方跑分",
+      "mast_right": "ARTIFICIAL ANALYSIS",
+      "header_no": "No.1",
+      "title": "综合智能指数",
+      "subtitle": "Index v5 · 小字为 effort 档位",
+      "chart_height": 470,
+      "max": 70,
+      "bars": [
+        {"name": "Fable 5.2", "tag": "max", "value": 65, "hl": true},
+        {"name": "Gemini 4 Carbon", "tag": "high", "value": 60},
+        {"name": "Opus 5.5", "tag": "max", "value": 59},
+        {"name": "GPT-6 Astra", "tag": "max", "value": 57},
+        {"name": "Fable 5.1", "tag": "max", "value": 49}
+      ],
+      "rest_label": "同榜其他模型",
+      "rest": [
+        {"name": "GPT-6.1 Sol", "tag": "max", "value": 55},
+        {"name": "Kimi K3.1 Pro", "value": 46},
+        {"name": "DeepSeek V4.1 Flash 1017", "tag": "max", "value": 33}
+      ],
+      "banner": {
+        "value": "$26.5",
+        "text": "代价：max 档每个任务的花费（约）<br><span>约为 Opus 5.5 的 2.6 倍</span>"
+      },
+      "source": "来源：Artificial Analysis"
+    },
+    {
+      "type": "ranking",
+      "mast_left": "第三方跑分",
+      "mast_right": "VALS AI · SCALE LABS",
+      "title": "另两家榜单也拿第一",
+      "top": {
+        "no": "01",
+        "title": "Vals Index",
+        "meta": "high effort",
+        "value": 71.31,
+        "unit": "%",
+        "claim": "36 个模型里第 1",
+        "note": "开到 max 档反而掉到第 7",
+        "others": [
+          {"name": "Sonnet 5.5", "value": 70.85, "unit": "%"},
+          {"name": "Gemini 4 Carbon", "value": 70.45, "unit": "%"},
+          {"name": "Opus 5.5", "value": 70.14, "unit": "%"},
+          {"name": "GPT-6 Astra", "value": 65.02, "unit": "%"}
+        ]
+      },
+      "inv": {
+        "no": "02",
+        "title": "Scale RLI",
+        "meta": "真实外包项目 · Automation Rate"
+      },
+      "max": 45,
+      "bars": [
+        {"name": "Fable 5.2", "value": 41.3, "unit": "%", "hl": true},
+        {"name": "Opus 5.5", "value": 21.25, "unit": "%"},
+        {"name": "GPT-6 Astra", "value": 20.83, "unit": "%"},
+        {"name": "Fable 5.1", "value": 17.92, "unit": "%"},
+        {"name": "Gemini Argon 4", "value": 17.08, "unit": "%"}
+      ],
+      "note": {
+        "title": "不是每项第一",
+        "body": "Zapier AutomationBench、AA 测的 Terminal-Bench 4.0 上没拿第一"
+      },
+      "source": "来源：Vals AI、Scale Labs、Artificial Analysis"
+    }
+  ]
+}

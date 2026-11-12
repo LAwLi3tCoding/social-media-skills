@@ -1,7 +1,7 @@
 """Apple 产品页风小红书卡片生成器。改 PAGES 内容 → python3 gen.py → node shot.mjs <outdir>"""
 import json,os
 CSS=open(os.path.join(os.path.dirname(__file__),'apple.css')).read()
-TAG="示例合集 · 01"; TOTAL=7; SRC="github.com/caru-ini/stack-diagram"
+TAG="示例合集 · 02"; TOTAL=7; SRC="github.com/caru-ini/stack-diagram"
 EXTRA={}
 def page(n,body,credit):
     return f'''<!doctype html><html><head><meta charset=utf-8><style>{CSS}{EXTRA.get(n,'')}</style></head><body><div id=p>

@@ -1,17 +1,19 @@
 ---
 name: xhs-card-design
-description: 给小红书笔记做 3:4 配图时用：先规划每张放什么，再挑视觉风格、用 HTML 模板或外部渲染工具出 1080×1440，最后跑尺寸与留白检查。也管封面选型和截图处理。
+description: >-
+  给小红书笔记做 3:4 配图时用：先规划每张放什么，再挑视觉风格、用 HTML 模板或 guizang / xhs-html 渲染
+  1080×1440，最后跑尺寸与留白检查。也管封面选型和截图处理。
 ---
 # 小红书配图：规划、风格、渲染、检查
 
-只在文字稿被确认后做图。固定合集用哪种风格可写在你自己的偏好文件里（可选）。
+只在文字稿被用户确认后做图。各合集固定用哪种风格见用户的偏好层（如已安装的 `content-profile`）。本 skill 的脚本、模板和参考文件都在它自己目录下的 `scripts/`、`templates/`、`references/`。
 
 ## 1. 规划（每张放什么）
 
 详见 `references/card-planning.md`。要点：
 
 - 先定主阅读面：概念、原理、科普类把定义、机制、例子、前提写在图卡上，读者只翻图也能懂；新闻、工具类图放截图、对比、关系，正文补版本、权限、额度、条件。
-- 封面写对象 + 主张，信息本身当钩子。排名表、流程图、模块图优先；新闻或引文用原帖截图铺满。
+- 封面写对象 + 主张，信息本身当钩子。工具 / Skill 封面要让人一眼看出它是干嘛的，不只写实测数字。排名表、流程图、模块图优先；新闻或引文用原帖截图铺满。
 - 一页推进一步：现象命名 → 对照或机制 → 例子 → 方法或检查；内容少就少做几页。
 - 每张最多一个机制图或对比表；表格每格来自原文或实测；自补解释和原文分层（可标「我的理解」）。
 - 主卡像一条编辑过的长帖：以文字和高亮引文为主，不为表格而表格。
@@ -34,19 +36,20 @@ description: 给小红书笔记做 3:4 配图时用：先规划每张放什么�
 
 风格表、配色、字体、模板位置见 `references/styles.md`。挑法：
 
-- 固定合集：选定一种做成模板目录，之后每篇只换内容。
-- 轮换合集：每篇可以不同，按内容挑；避开太花哨和太朴素，偏美观克制、有层次（大字标题、强调色块、编号、带阴影图卡，一主一辅两色，不用手绘和便签元素）。
-- 开发者新闻、截图类：Swiss / Editorial 外部包或本包 `brief_renderer`；工具 / Skill 介绍：Apple 产品页、报纸、白板手绘。
-- 普通读者科普：黑板、黏土、手账、手绘三款、像素（像素适合记忆点强的固定合集）。
-- 未指定风格：同一页（封面 + 一张内页）出 3–5 种风格样张，拼成对比图再挑，然后做全套。
+- 固定合集：选定一种做成模板目录，之后每篇只换内容；用户点名换风格时按用户说的来。
+- 轮换合集：每篇可以不同，按内容挑；避开太花哨和太朴素，偏美观克制、有层次（大字标题、强调色块、编号、带阴影图卡，一主一辅两色；手绘和便签只用模板里的 `handdrawn/`、`sticky/`，做不到那个水准就换风格）。
+- 开发者新闻、截图类：guizang Swiss 或 `brief_renderer`；模型发布、跑分、价格对比这类数字主导的新闻：杂志大排版（`templates/magazine/`，配色按主题换）；工具 / Skill 介绍：Apple 产品页、报纸、白板手绘。
+- 普通读者科普：黑板、黏土、手账、手绘三款、像素。
+- 用户没指定：同一页（封面 + 一张内页）出 3–5 种风格样张，拼成对比图让用户挑，再做全套。
 
 ## 4. 渲染
 
 | 方式 | 何时用 | 怎么跑 |
 |---|---|---|
 | 本包 HTML 模板 | 风格表里的样式 | `scripts/render_html.sh page.html out.png`；Apple 和手绘模板用各自的 `shot.mjs`；像素用 `templates/pixel/render.sh` |
-| guizang-social-card（外部包，AGPL，不随本仓库分发） | Swiss / Editorial、公众号封面、Live Photo | 自行安装：`npx skills add op7418/guizang-social-card-skill -g -y`；按其 SKILL.md 渲染；默认 Swiss + `.poster.xhs`；不改包内模板源文件 |
-| xhs-html / creator-buddy（外部包，不随本仓库分发） | 备选排版 | 选偏研究简报 / 瑞士信息图的风格，避开少女可爱风 |
+| `templates/magazine/gen.py` | 杂志大排版（新闻、跑分、价格对比） | `python3 templates/magazine/gen.py content.json --out <稿目录>/cards --theme anthropic`（主题有 anthropic / openai / google / crimson，内部调 `scripts/render_html.sh`；页型和 JSON 格式见该目录 README） |
+| guizang-social-card（外部包） | Swiss / Editorial、公众号封面、Live Photo | 安装 `npx skills add op7418/guizang-social-card-skill -g -y`；按其 SKILL.md 用 `node scripts/render.mjs`；默认 Swiss + `.poster.xhs`；不改包内模板源文件 |
+| xhs-html（外部包，creator-buddy） | 备选排版，62 种风格 | 选偏研究简报 / 瑞士信息图的风格，避开少女可爱风 |
 | `templates/brief_renderer/render.py` | 研究简报风备用 | `python3 render.py deck.json --theme brief --density compact` |
 
 外部作图工具不必是小红书专用，能出 3:4 1080×1440 并接进本流程即可。
@@ -60,11 +63,11 @@ python3 scripts/check_cards.py <稿目录>/cards/*.png      # 尺寸 + 空白横
 python3 ../social-copywriting/scripts/lint_copy.py --text <稿目录>/cards_src/*.html
 ```
 
-再逐张看：溢出、重叠、截断、孤字折行、发糊、底部被裁。深色大底（像素风夜空）网格检查易误报：看图确认那是画面不是空白，再用 `--mode band` 复核。
+再逐张看：溢出、重叠、截断、孤字折行、发糊、底部被裁。深色大底（像素风夜空、黑板）网格检查易误报：看图确认那是画面不是空白，再用 `--mode band` 复核并告诉用户。
 
 ## 依赖
 
 - Chrome / Chromium（headless 截图）；Python 3 + Pillow + numpy；Node + playwright（Apple、手绘模板的 `shot.mjs`：`npm i playwright`，或设环境变量 `PLAYWRIGHT_MJS`）。
-- 字体（**不随本仓库分发**，放到 `$FONTS_DIR` 后跑 `scripts/relocate.sh`）：Noto Sans/Serif CJK SC（系统包 `fonts-noto-cjk`）、Inter、JetBrains Mono、得意黑 Smiley Sans（atelier-anchor/smiley-sans）、Fusion Pixel（TakWolf/fusion-pixel-font）、霞鹜文楷 LXGW WenKai（lxgw/LxgwWenKai）、小赖 Xiaolai（lxgw/kose-font）、站酷快乐体（Google Fonts: ZCOOL KuaiLe）、青柯 / 马善政 / 小薇（Google Fonts: ZCOOL QingKe HuangYou、Ma Shan Zheng、ZCOOL XiaoWei）。
+- 字体（不随包分发，放到 `$FONTS_DIR` 后跑 `scripts/relocate.sh`）：Noto Sans/Serif CJK SC（系统包 `fonts-noto-cjk`）、Inter、JetBrains Mono、得意黑 Smiley Sans（atelier-anchor/smiley-sans）、Fusion Pixel（TakWolf/fusion-pixel-font）、霞鹜文楷 LXGW WenKai（lxgw/LxgwWenKai）、小赖 Xiaolai（lxgw/kose-font）、站酷快乐体（Google Fonts: ZCOOL KuaiLe）、青柯 / 马善政 / 小薇（Google Fonts: ZCOOL QingKe HuangYou、Ma Shan Zheng、ZCOOL XiaoWei）。
 
-新风格写入 `references/styles.md`；个人合集偏好写入你自己的偏好文件（可选）。
+用户确认新风格或纠正视觉偏好：风格写进 `references/styles.md`，个人选择写进偏好层。

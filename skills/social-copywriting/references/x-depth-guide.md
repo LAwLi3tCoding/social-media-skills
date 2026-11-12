@@ -1,6 +1,6 @@
 # 深度写作准则：X 引用/回复 + 小红书笔记
 
-依据：2026-09-20 到 11-02 之间 X 上的 86 条真实帖子，都用 X 公开接口抓取，正文逐字摘录。
+依据：2026-09-20 到 11-02 之间 X 上的 86 条真实帖子，都用 X 公开接口抓取，正文逐字摘录。研究底稿路径见用户的偏好层（如已安装的 `content-profile`）。
 英文账号：karpathy、simonw、swyx、theo、thsottiaux、levelsio、HamelHusain、mitchellh、badlogicgames、jxnlco、eugeneyan。
 中文账号：dotey、op7418、vista8、oran_ge，另有一些中文中小号作为正反对照。
 反面样本来自 "harness / claude code / codex" 话题下赞数较高的搬运帖。
@@ -201,6 +201,7 @@
 3. 有没有一个具体名词或数字（模型 / 档位 / 时长 / 钱 / 文件 / 命令）？
 4. 能不能删到一两句？
 5. 有没有 bot 词？包括 huge / wild / game changer / great post / totally agree / 🤯 / 👇 / bookmark / "here's why"。
+6. 有没有偏好层额外禁用的项目名或称呼？有就按偏好层处理。
 
 ### 模板（小写 dev 口吻，括号里是要填的内容）
 1. **经验数据**：`ran this on (task) for (time/n runs), the real win was (specific), not (the thing everyone's hyping)`
