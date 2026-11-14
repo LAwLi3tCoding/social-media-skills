@@ -6,7 +6,7 @@ description: >-
 ---
 # 社媒内容总控
 
-本 skill 只管顺序和分工，不重复各环节规则。个人偏好（账号、合集、口吻、禁用词扩展）一律以用户的偏好层为准（如已安装的 `content-profile`）；与通用 skill 冲突时偏好层胜出。
+本 skill 只管顺序和分工，不重复各环节规则。个人偏好（账号、合集、口吻、禁用词扩展）一律以用户的偏好层为准（如有）；与通用 skill 冲突时偏好层胜出。
 
 ## 流水线
 
@@ -15,11 +15,11 @@ description: >-
 | 1 | 选题、查重、过质量门槛、实测取证 | `content-quality-gate` | 已对照已发清单；`<稿目录>/sources.md` 列出原始链接与日期；可实测项的日志在 `<稿目录>/verify/` |
 | 2 | 定内容类型（常青技巧 / 工具或 Skill 测评 / 概念扫盲 / 新闻速报 / 文章解读） | `xhs-series-formats` | 稿件头部写明类型 |
 | 3 | 写标题、正文、话题（X 版另写） | `social-copywriting`；X 另读 `x-posting` | `lint_copy.py` 输出 PASS |
-| 4 | 去 AI 味 | `social-copywriting` §去 AI 味 | 跑过 `detect.py`，交付的是润色后的稿 |
+| 4 | 去 AI 味 | `social-copywriting` §去 AI 味 | 跑过 `detect.py` 和 unslop，交付的是润色后的稿 |
 | 5 | 交付文字稿给用户确认（**此时不做图**） | — | 用户明确点头 |
 | 6 | 配图 | `xhs-card-design` | `check_cards.py` 输出 PASS，且逐张看过 |
-| 7 | 发布小红书 / 给 X 一键链接 | `xhs-publish`、`x-posting` | 发布后核对页面；回写合集进度文件和已发清单 |
-| 8 | 盯官宣类监控 routine | `launch-watch-cadence` | 建 routine 前报过每天次数 |
+| 7 | 发布小红书 / 给 X 一键链接（转述 Tips 用引用转发） | `xhs-publish`、`x-posting` | 发布后核对页面；回写合集进度文件和已发清单 |
+| 8 | 盯官宣类监控（可选） | 用户自己的监控流程（如有） | 建监控前报过每天检查次数 |
 
 ## 硬规则
 

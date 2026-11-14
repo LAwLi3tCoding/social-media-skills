@@ -1,6 +1,6 @@
 # 深度写作准则：X 引用/回复 + 小红书笔记
 
-依据：2026-09-20 到 11-02 之间 X 上的 86 条真实帖子，都用 X 公开接口抓取，正文逐字摘录。研究底稿路径见用户的偏好层（如已安装的 `content-profile`）。
+依据：2026-09-20 到 11-02 之间 X 上的 86 条真实帖子，都用 X 公开接口抓取，正文逐字摘录。研究底稿路径见用户的偏好层（如有）。
 英文账号：karpathy、simonw、swyx、theo、thsottiaux、levelsio、HamelHusain、mitchellh、badlogicgames、jxnlco、eugeneyan。
 中文账号：dotey、op7418、vista8、oran_ge，另有一些中文中小号作为正反对照。
 反面样本来自 "harness / claude code / codex" 话题下赞数较高的搬运帖。

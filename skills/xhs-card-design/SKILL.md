@@ -6,7 +6,7 @@ description: >-
 ---
 # 小红书配图：规划、风格、渲染、检查
 
-只在文字稿被用户确认后做图。各合集固定用哪种风格见用户的偏好层（如已安装的 `content-profile`）。本 skill 的脚本、模板和参考文件都在它自己目录下的 `scripts/`、`templates/`、`references/`。
+只在文字稿被用户确认后做图。各合集固定用哪种风格见用户的偏好层（如有）。本 skill 的脚本、模板和参考文件都在它自己目录下的 `scripts/`、`templates/`、`references/`。
 
 ## 1. 规划（每张放什么）
 

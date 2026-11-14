@@ -25,9 +25,9 @@
 |---|---|---|
 | [`social-content-router`](skills/social-content-router/SKILL.md) | 一条内容要跨选题、写作、配图、发布多个环节 | 规定顺序，以及每一步该读哪个 skill |
 | [`content-quality-gate`](skills/content-quality-gate/SKILL.md) | 决定这条值不值得发，或发前要查重、实测到什么程度 | 选题过滤、已发查重、七项门槛、九种增量、隔离环境实测与取证 |
-| [`xhs-series-formats`](skills/xhs-series-formats/SKILL.md) | 已定题，要按内容类型搭结构 | 常青技巧、测评、扫盲、新闻、功能介绍、解读、周报七种结构 |
-| [`social-copywriting`](skills/social-copywriting/SKILL.md) | 写或改标题、正文、话题、图卡上的字 | 标题与字数规则、禁用句式与套话、去 AI 味、`lint_copy.py` |
-| [`x-posting`](skills/x-posting/SKILL.md) | 写 X 原创、引用或回复 | 增量写法、中文短帖、一键发布 intent 链接；共用语言规则见 copywriting |
+| [`xhs-series-formats`](skills/xhs-series-formats/SKILL.md) | 已定题，要按内容类型搭结构 | 常青技巧、测评、扫盲、新闻与榜单、功能介绍、解读、周报七种结构 |
+| [`social-copywriting`](skills/social-copywriting/SKILL.md) | 写或改标题、正文、话题、图卡上的字 | 标题与字数规则、句子写法（主语、用词、语序）、禁用句式与问句式小标题、去 AI 味、`lint_copy.py` |
+| [`x-posting`](skills/x-posting/SKILL.md) | 写 X 原创、引用或回复 | 转述他人 Tips 用引用转发、增量写法、中文短帖、一键 intent 链接；共用语言规则见 copywriting |
 | [`xhs-card-design`](skills/xhs-card-design/SKILL.md) | 文字稿已确认，要做小红书 3:4 配图 | 规划每张放什么、选风格、HTML 模板渲染、`check_cards.py` 留白检查 |
 | [`xhs-publish`](skills/xhs-publish/SKILL.md) | 稿和图片都已确认，要发到创作服务平台 | 发布前自查、上传顺序、蓝色话题、遇登录或验证码即停、发布后回写 |
 
@@ -64,6 +64,7 @@ cp -R skills/* ~/.agents/skills/
   ```bash
   npx skills add larashero3-dotcom/lieflat-less-ai-tone -g -y
   ```
+  另可配合任一 `unslop` 类 skill 再砍一遍套话（可选）。
 - **xhs-card-design**：
   - Chrome / Chromium（`scripts/render_html.sh`）
   - Python 3 + Pillow + numpy（`scripts/check_cards.py`，以及部分模板的 `gen.py`）

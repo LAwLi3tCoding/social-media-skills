@@ -4,7 +4,7 @@
   "pages": [
     {
       "type": "cover",
-      "mast_left": "AI资讯",
+      "mast_left": "示例合集",
       "mast_right": "ANTHROPIC · CLAUDE",
       "title": "Claude Fable 5.2 发布",
       "dek": "Anthropic 新模型 · 所有 Claude API 用户都能直接调用",

@@ -1,15 +1,16 @@
 ---
 name: x-posting
 description: >-
-  写 X（Twitter）原创、引用或回复时用：回复与引用怎么带增量、可用句式模板、发前自检、中文短帖写法，以及一键发布 intent
+  写 X（Twitter）原创、引用或回复时用：转述他人 Tips 改为引用转发、回复与引用怎么带增量、可用句式模板、发前自检、中文短帖写法，以及一键发布 intent
   链接的拼法。共用语言规则见 social-copywriting。
 ---
 # X 原创、引用与回复
 
-共用禁用词、去 AI 味流程见 `social-copywriting`；账号与代发约定见用户的偏好层（如已安装的 `content-profile`）。
+共用禁用词、去 AI 味流程见 `social-copywriting`；账号与代发约定见用户的偏好层（如有）。
 
 ## 回复与引用
 
+- 转述别人的 Tips、方法或观点时，X 版一律引用转发原帖，不另写原创。
 - 不复述原帖内容或数字；写自己的观点、感想或真实体感。
 - 一条只用一种增量（九种见 `content-quality-gate` §3），写完删到一两句。
 - 必须有一个具体名词或数字：模型、档位、时长、钱、命令。
@@ -49,7 +50,7 @@ rg -n -i "huge|wild|game changer|great post|totally agree|🤯|👇|bookmark|her
 
 ## 交付
 
-- 每条都附 URL 编码的一键链接：`https://x.com/intent/post?text=<urlencoded>`；回复加 `&in_reply_to=<status_id>`。
+- 每条都附 URL 编码的一键链接：`https://x.com/intent/post?text=<urlencoded>`；回复加 `&in_reply_to=<status_id>`；引用转发加 `&url=<原帖链接>`（原帖以卡片形式嵌入）。
 - 不替用户直接发帖。
 
 ```bash
