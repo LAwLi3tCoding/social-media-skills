@@ -25,11 +25,11 @@
 |---|---|---|
 | [`social-content-router`](skills/social-content-router/SKILL.md) | 一条内容要跨选题、写作、配图、发布多个环节 | 规定顺序，以及每一步该读哪个 skill |
 | [`content-quality-gate`](skills/content-quality-gate/SKILL.md) | 决定这条值不值得发，或发前要查重、实测到什么程度 | 选题过滤、已发查重、七项门槛、九种增量、隔离环境实测与取证 |
-| [`xhs-series-formats`](skills/xhs-series-formats/SKILL.md) | 已定题，要按内容类型搭结构 | 常青技巧、测评、扫盲、新闻与榜单、功能介绍、解读、周报七种结构 |
-| [`social-copywriting`](skills/social-copywriting/SKILL.md) | 写或改标题、正文、话题、图卡上的字 | 标题与字数规则、句子写法（主语、用词、语序）、禁用句式与问句式小标题、去 AI 味、`lint_copy.py` |
+| [`xhs-series-formats`](skills/xhs-series-formats/SKILL.md) | 已定题，要按内容类型搭结构 | 常青技巧、测评、扫盲、新闻与榜单、功能介绍、解读、周报七种结构；写长文还是卡片图文 |
+| [`social-copywriting`](skills/social-copywriting/SKILL.md) | 写或改标题、正文、话题、图卡上的字 | 标题与字数规则、句子写法（主语、用词、语序）、禁用句式与问句式小标题、长文与转述写法、去 AI 味（含长文外部审稿）、`lint_copy.py` |
 | [`x-posting`](skills/x-posting/SKILL.md) | 写 X 原创、引用或回复 | 转述他人 Tips 用引用转发、增量写法、中文短帖、一键 intent 链接；共用语言规则见 copywriting |
 | [`xhs-card-design`](skills/xhs-card-design/SKILL.md) | 文字稿已确认，要做小红书 3:4 配图 | 规划每张放什么、选风格、HTML 模板渲染、`check_cards.py` 留白检查 |
-| [`xhs-publish`](skills/xhs-publish/SKILL.md) | 稿和图片都已确认，要发到创作服务平台 | 发布前自查、上传顺序、蓝色话题、遇登录或验证码即停、发布后回写 |
+| [`xhs-publish`](skills/xhs-publish/SKILL.md) | 稿和图片都已确认，要发到创作服务平台 | 发布前自查、上传顺序、蓝色话题、「写长文」模板与封面坑点、遇登录或验证码即停、发布后回写 |
 
 各 Skill 可单独使用。
 
@@ -38,7 +38,7 @@
 跨环节时按 `social-content-router` 的顺序走：
 
 1. **选题与实测** — `content-quality-gate`：对照已发清单，过七项门槛，可实测项留下 `verify/` 日志。
-2. **定类型** — `xhs-series-formats`：在稿件头部写明类型，按该类型的结构写。
+2. **定类型和形式** — `xhs-series-formats`：在稿件头部写明类型，以及写长文还是卡片图文，按该类型的结构写。
 3. **写文案** — `social-copywriting`（X 另读 `x-posting`）：`lint_copy.py` 输出 PASS，并按需做去 AI 味。
 4. **交文字稿确认** — 用户点头之前不做图。
 5. **配图** — `xhs-card-design`：`check_cards.py` 输出 PASS，且逐张看过。
@@ -87,6 +87,10 @@ python3 skills/social-copywriting/scripts/lint_copy.py \
 # 读取偏好层里 `ban:` 行追加禁用词
 python3 skills/social-copywriting/scripts/lint_copy.py \
   --body body.txt --profile ~/.claude/skills/content-profile/SKILL.md
+
+# 小红书「写长文」：编辑器标题 ≤64 字，正文不限字数
+python3 skills/social-copywriting/scripts/lint_copy.py \
+  --longform --title title.txt --body longform.md --tags tags.txt
 
 # 装好字体后跑一次，把模板里的 __FONTS_DIR__ 换成本地路径
 FONTS_DIR=~/fonts ./skills/xhs-card-design/scripts/relocate.sh

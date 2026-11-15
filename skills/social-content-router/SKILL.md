@@ -13,12 +13,12 @@ description: >-
 | 步 | 做什么 | 读哪个 skill | 出口条件（可自查） |
 |---|---|---|---|
 | 1 | 选题、查重、过质量门槛、实测取证 | `content-quality-gate` | 已对照已发清单；`<稿目录>/sources.md` 列出原始链接与日期；可实测项的日志在 `<稿目录>/verify/` |
-| 2 | 定内容类型（常青技巧 / 工具或 Skill 测评 / 概念扫盲 / 新闻速报 / 文章解读） | `xhs-series-formats` | 稿件头部写明类型 |
-| 3 | 写标题、正文、话题（X 版另写） | `social-copywriting`；X 另读 `x-posting` | `lint_copy.py` 输出 PASS |
-| 4 | 去 AI 味 | `social-copywriting` §去 AI 味 | 跑过 `detect.py` 和 unslop，交付的是润色后的稿 |
-| 5 | 交付文字稿给用户确认（**此时不做图**） | — | 用户明确点头 |
-| 6 | 配图 | `xhs-card-design` | `check_cards.py` 输出 PASS，且逐张看过 |
-| 7 | 发布小红书 / 给 X 一键链接（转述 Tips 用引用转发） | `xhs-publish`、`x-posting` | 发布后核对页面；回写合集进度文件和已发清单 |
+| 2 | 定内容类型（常青技巧 / 工具或 Skill 测评 / 概念扫盲 / 新闻速报 / 文章解读），再定形式：写长文还是卡片图文 | `xhs-series-formats`（含「形式选择」） | 稿件头部写明类型、形式和选这个形式的理由 |
+| 3 | 写标题、正文、话题（X 版另写）；长文按 `social-copywriting` §4.2 写 | `social-copywriting`；X 另读 `x-posting` | `lint_copy.py` 输出 PASS（长文加 `--longform`，发布页短标题另按默认 20 字查） |
+| 4 | 去 AI 味 | `social-copywriting` §5 | 跑过 `detect.py` 和 unslop，交付的是润色后的稿；长文另按 §5 第 6 条做外部写作 Skill 审稿，`style_review.md` 每条都标了「已改」或「未改 + 理由」 |
+| 5 | 交付文字稿给用户确认（**此时不做图**），附上形式选择和理由 | — | 用户明确点头 |
+| 6 | 配图；长文封面用和内容相关的照片或图片 | `xhs-card-design` | `check_cards.py` 输出 PASS，且逐张看过 |
+| 7 | 发布小红书（图文或写长文）/ 给 X 一键链接（转述 Tips 用引用转发） | `xhs-publish`、`x-posting` | 发布后核对页面；回写合集进度文件和已发清单 |
 | 8 | 盯官宣类监控（可选） | 用户自己的监控流程（如有） | 建监控前报过每天检查次数 |
 
 ## 硬规则
