@@ -32,6 +32,7 @@ description: >-
 - 配色按题材选，干净克制；强调色参考：Claude 陶土橙、OpenAI 绿、DeepSeek 蓝、开源项目 GitHub 深灰或项目品牌色。
 - 合集帖：角标写「合集名 · 0N」，页码另放右上角。
 - 不用粗糙的 Python / PIL 直接画图。
+- 中文字形必须是简体：`@font-face` 不许用 `url(...NotoSansCJK-*.ttc)` / `NotoSerifCJK-*.ttc`（.ttc 默认取第一套日文字形，「门」「说」等会画成日文写法），改用 `src:local("Noto Sans CJK SC")` / `local("Noto Sans CJK SC Bold")`（Serif 同理），并给 `<html lang="zh-CN">`；PIL 读 .ttc 要指定简体那一套的 index。出图后放大看「门」字确认是简体写法。
 
 ## 3. 选风格
 
